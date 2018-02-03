@@ -1,0 +1,31 @@
+<script type="text/javascript">
+    RED.nodes.registerType('threshold', {
+        category: 'streams',
+        color: '#a6bbcf',
+        defaults: {
+            name: { value: "" },
+            threshold: { value: 0.0, validate: RED.validators.number() }
+        },
+        inputs: 1,
+        outputs: 1,
+        icon: "file.png",
+        label: function () {
+            return this.name || "threshold";
+        }
+    });
+</script>
+
+<script type="text/x-red" data-template-name="threshold">
+    <div class="form-row">
+        <label for="node-input-name"><i class="icon-tag"></i>Name</label>
+        <input type="text" id="node-input-name" placeholder="Name">
+    </div>
+    <div class="form-row">
+        <label for="node-input-threshold"><i class="icon-tag"></i>Threshold</label>
+        <input type="number" id="node-input-threshold" placeholder="Threshold">
+    </div>
+</script>
+
+<script type="text/x-red" data-help-name="threshold">
+    <p>Pass the message if the payload is greater than some threshold.</p>
+</script>
