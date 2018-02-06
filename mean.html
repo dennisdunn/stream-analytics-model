@@ -1,31 +1,31 @@
 <script type="text/javascript">
-    RED.nodes.registerType('threshold', {
+    RED.nodes.registerType('mean', {
         category: 'streams',
         color: '#E9967A',
         defaults: {
             name: { value: "" },
-            threshold: { value: 0.0, validate: RED.validators.number() }
+            size: { value: 3, validate: RED.validators.number() }
         },
         inputs: 1,
         outputs: 1,
         icon: "file.png",
         label: function () {
-            return this.name || "threshold";
+            return this.name || "mean";
         }
     });
 </script>
 
-<script type="text/x-red" data-template-name="threshold">
+<script type="text/x-red" data-template-name="mean">
     <div class="form-row">
         <label for="node-input-name"><i class="icon-tag"></i>Name</label>
         <input type="text" id="node-input-name" placeholder="Name">
     </div>
     <div class="form-row">
-        <label for="node-input-threshold"><i class="icon-tag"></i>Threshold</label>
-        <input type="number" id="node-input-threshold" placeholder="Threshold">
+        <label for="node-input-size"><i class="icon-tag"></i>Size</label>
+        <input type="number" id="node-input-size" placeholder="Size">
     </div>
 </script>
 
-<script type="text/x-red" data-help-name="threshold">
-    <p>Pass the message if the payload is greater than some threshold.</p>
+<script type="text/x-red" data-help-name="mean">
+    <p>PChange the payload to be the mean of the payloads of the previous "size" messages.</p>
 </script>

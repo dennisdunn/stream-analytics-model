@@ -10,7 +10,8 @@
     "nodes": {
       "threshold": "threshold.js",
       "indexer": "indexer.js",
-      "median": "median.js"
+      "median": "median.js",
+      "mean": "mean.js"
     }
   },
   "author": "Dennis Dunn <ansofive@gmail.com>",
