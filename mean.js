@@ -1,22 +1,20 @@
 module.exports = function (RED) {
     function Mean(config) {
         RED.nodes.createNode(this, config);
-        var context = this.context();
         this.size = config.size;
-        var node = this;
+        let node = this;
+        node.buffer = [];
         node.on('input', msg => {
             if (Number.isFinite(msg.payload)) {
-                var buffer = context.get('buffer') || [];
-                buffer.push(msg.payload);
-                var total = 0;
-                buffer.forEach(it => {
+                node.buffer.push(msg.payload);
+                let total = 0;
+                node.buffer.forEach(it => {
                     total += it;
                 });
-                msg.payload = total / buffer.length;
-                if (buffer.length === node.size) {
-                    buffer.shift();
+                msg.payload = total / node.buffer.length;
+                if (node.buffer.length === node.size) {
+                    node.buffer.shift();
                 }
-                context.set('buffer', buffer);
             }
             node.send(msg);
         });
