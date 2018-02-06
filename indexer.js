@@ -4,9 +4,9 @@ module.exports = function (RED) {
         var context = this.context();
         var node = this;
         node.on('input', msg => {
-            var i = context.get('indexer-state') || 0;
+            var i = context.get('current') || 0;
             msg.index = i++;
-            context.set('indexer-state', i);
+            context.set('current', i);
             node.send(msg);
         });
     }

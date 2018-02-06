@@ -9,7 +9,8 @@
   "node-red": {
     "nodes": {
       "threshold": "threshold.js",
-      "indexer": "indexer.js"
+      "indexer": "indexer.js",
+      "median": "median.js"
     }
   },
   "author": "Dennis Dunn <ansofive@gmail.com>",
