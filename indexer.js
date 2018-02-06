@@ -5,9 +5,7 @@ module.exports = function (RED) {
         var node = this;
         node.idx = 0;
         node.on('input', msg => {
-           // var i = context.get('current') || 0;
             msg.index = node.idx++;
-           // context.set('current', i);
             node.send(msg);
         });
     }
