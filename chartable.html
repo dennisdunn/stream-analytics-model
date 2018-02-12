@@ -1,5 +1,5 @@
 <script type="text/javascript">
-    RED.nodes.registerType('indexer', {
+    RED.nodes.registerType('chartable', {
         category: 'streams',
         color: '#E9967A',
         defaults: {
@@ -9,7 +9,7 @@
         outputs: 1,
         icon: "file.png",
         label: function () {
-            return this.name || "indexer";
+            return this.name || "chartable";
         }
     });
 </script>
@@ -22,5 +22,5 @@
 </script>
 
 <script type="text/x-red" data-help-name="indexer">
-    <p>Add a property named "n" to each message. The index value is monotonically increasing, the first message is indexed at "0." A payload of "reset" will clear the internal count.</p>
+    <p>Make a message suitable to the dashboard chart component.</p>
 </script>

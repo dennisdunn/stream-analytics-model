@@ -5,14 +5,11 @@ module.exports = function (RED) {
         let node = this;
         node.buffer = [];
         node.on('input', msg => {
-            if (Number.isFinite(msg.payload)) {
-                node.buffer.push(msg.payload);
-                let total = 0;
-                node.buffer.forEach(it => {
-                    total += it;
-                });
-                msg.payload = total / node.buffer.length;
-                if (node.buffer.length === node.size) {
+            if (Number.isFinite(msg.payload.value)) {
+                node.buffer.push(msg.payload.value);
+                let total = node.buffer.reduce((a,b) => a + b);
+                msg.payload.value = total / node.buffer.length;
+                if (node.buffer.length == config.size) {
                     node.buffer.shift();
                 }
             }

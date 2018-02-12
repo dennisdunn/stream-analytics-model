@@ -12,7 +12,8 @@
       "indexer": "indexer.js",
       "median": "median.js",
       "mean": "mean.js",
-      "window": "window.js"
+      "window": "window.js",
+      "chartable": "chartable.js"
     }
   },
   "author": "Dennis Dunn <ansofive@gmail.com>",

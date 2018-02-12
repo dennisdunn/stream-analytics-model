@@ -5,7 +5,11 @@ module.exports = function (RED) {
         var node = this;
         node.idx = 0;
         node.on('input', msg => {
-            msg.index = node.idx++;
+            if (msg.payload == "reset") {
+                node.idx = 0;
+                return null;
+            }
+            msg.n = node.idx++;
             node.send(msg);
         });
     }
