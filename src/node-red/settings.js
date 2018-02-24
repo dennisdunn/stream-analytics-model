@@ -75,7 +75,7 @@ module.exports = {
 
     // Node-RED scans the `nodes` directory in the install directory to find nodes.
     // The following property can be used to specify an additional directory to scan.
-    nodesDir: '~/Documents/StirTrek 2018/stream-analytics/src/nodes',
+    nodesDir: '../nodes',
 
     // By default, the Node-RED UI is available at http://localhost:1880/
     // The following property can be used to specifiy a different root path.
