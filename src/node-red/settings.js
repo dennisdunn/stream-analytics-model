@@ -75,27 +75,28 @@ module.exports = {
 
     // Node-RED scans the `nodes` directory in the install directory to find nodes.
     // The following property can be used to specify an additional directory to scan.
-    nodesDir: '../nodes',
+    nodesDir: 'c:/users/dennis/Documents/StirTrek-2018/stream-analytics-model/src/nodes',
 
     // By default, the Node-RED UI is available at http://localhost:1880/
     // The following property can be used to specifiy a different root path.
     // If set to false, this is disabled.
-    //httpAdminRoot: '/admin',
+    // httpAdminRoot: '/admin',
 
     // Some nodes, such as HTTP In, can be used to listen for incoming http requests.
     // By default, these are served relative to '/'. The following property
     // can be used to specifiy a different root path. If set to false, this is
     // disabled.
-    //httpNodeRoot: '/red-nodes',
+    // httpNodeRoot: '/api',
 
     // The following property can be used in place of 'httpAdminRoot' and 'httpNodeRoot',
     // to apply the same root to both parts.
-    //httpRoot: '/red',
+    // httpRoot: '/red',
 
     // When httpAdminRoot is used to move the UI to a different root path, the
     // following property can be used to identify a directory of static content
     // that should be served at http://localhost:1880/.
     //httpStatic: '/home/nol/node-red-static/',
+    httpStatic: 'c:/users/dennis/Documents/StirTrek-2018/stream-analytics-model/static/',
 
     // The maximum size of HTTP request that will be accepted by the runtime api.
     // Default: 5mb

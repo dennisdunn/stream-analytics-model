@@ -4,8 +4,8 @@
   "description": "Node-Red tools to manipulate time series streams.",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "cd src/node-red & node-red --userDir ."
+    "start": "node-red --userDir ./src/node-red",
+    "plot": "gnuplot plot.gnuplot"
   },
   "node-red": {
     "nodes": {
