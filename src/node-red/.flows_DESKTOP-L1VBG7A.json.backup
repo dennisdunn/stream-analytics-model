@@ -241,7 +241,7 @@
         "wires": [
             [
                 "692362b0.2df92c",
-                "d4ed678f.2ccf58"
+                "cfae0a0b.b28d28"
             ]
         ]
     },
@@ -292,8 +292,8 @@
         "type": "chartable",
         "z": "da1fb570.2fb978",
         "name": "",
-        "x": 315.5,
-        "y": 136.14999389648438,
+        "x": 364.5,
+        "y": 119.14999389648438,
         "wires": [
             [
                 "5a64984b.f910d8"
@@ -804,7 +804,8 @@
         "wires": [
             [
                 "5a64984b.f910d8",
-                "ca0e5db9.3998f"
+                "ca0e5db9.3998f",
+                "bfe26636.7b27d8"
             ]
         ]
     },
@@ -813,9 +814,9 @@
         "type": "mean",
         "z": "da1fb570.2fb978",
         "name": "",
-        "size": 3,
-        "x": 232.5,
-        "y": 251.14999389648438,
+        "size": "5",
+        "x": 276.5,
+        "y": 183.14999389648438,
         "wires": [
             [
                 "3f1e8871.bc29e8"
@@ -870,11 +871,95 @@
             "#c5b0d5"
         ],
         "useOldStyle": false,
-        "x": 552.5,
+        "x": 571.5,
         "y": 205.85000610351562,
         "wires": [
             [],
             []
+        ]
+    },
+    {
+        "id": "cfae0a0b.b28d28",
+        "type": "threshold",
+        "z": "da1fb570.2fb978",
+        "name": "",
+        "threshold": "0.25",
+        "x": 144.5,
+        "y": 359.1499938964844,
+        "wires": [
+            [
+                "d4ed678f.2ccf58",
+                "b4fde783.908558"
+            ]
+        ]
+    },
+    {
+        "id": "b4fde783.908558",
+        "type": "median",
+        "z": "da1fb570.2fb978",
+        "name": "",
+        "size": 3,
+        "x": 363.5,
+        "y": 380.1499938964844,
+        "wires": [
+            [
+                "7396d512.2e8e0c"
+            ]
+        ]
+    },
+    {
+        "id": "bfe26636.7b27d8",
+        "type": "ui_chart",
+        "z": "da1fb570.2fb978",
+        "name": "median",
+        "group": "1bd60359.b904bd",
+        "order": 0,
+        "width": 0,
+        "height": 0,
+        "label": "Median",
+        "chartType": "line",
+        "legend": "false",
+        "xformat": "HH:mm:ss",
+        "interpolate": "linear",
+        "nodata": "",
+        "dot": false,
+        "ymin": "0",
+        "ymax": "1",
+        "removeOlder": 1,
+        "removeOlderPoints": "100",
+        "removeOlderUnit": "604800",
+        "cutout": 0,
+        "useOneColor": false,
+        "colors": [
+            "#1f77b4",
+            "#aec7e8",
+            "#ff7f0e",
+            "#2ca02c",
+            "#98df8a",
+            "#d62728",
+            "#ff9896",
+            "#9467bd",
+            "#c5b0d5"
+        ],
+        "useOldStyle": false,
+        "x": 562,
+        "y": 351,
+        "wires": [
+            [],
+            []
+        ]
+    },
+    {
+        "id": "7396d512.2e8e0c",
+        "type": "chartable",
+        "z": "da1fb570.2fb978",
+        "name": "",
+        "x": 507.5,
+        "y": 443.1499938964844,
+        "wires": [
+            [
+                "bfe26636.7b27d8"
+            ]
         ]
     }
 ]
