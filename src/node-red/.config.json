@@ -389,6 +389,16 @@
      "local": false,
      "module": "node-red",
      "file": "c:\\users\\dennis\\Documents\\StirTrek-2018\\stream-analytics-model\\src\\nodes\\differencing.js"
+    },
+    "utilization": {
+     "name": "utilization",
+     "types": [
+      "utilization"
+     ],
+     "enabled": true,
+     "local": false,
+     "module": "node-red",
+     "file": "c:\\users\\dennis\\Documents\\StirTrek-2018\\stream-analytics-model\\src\\nodes\\utilization.js"
     }
    }
   },

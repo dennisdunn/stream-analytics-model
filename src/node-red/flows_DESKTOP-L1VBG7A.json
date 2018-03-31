@@ -129,7 +129,7 @@
             }
         },
         "site": {
-            "name": "Monitor",
+            "name": "Pump Monitor",
             "hideToolbar": "true",
             "allowSwipe": "false",
             "dateFormat": "DD/MM/YYYY",
@@ -236,14 +236,14 @@
         "links": [
             "40db0525.ebc17c"
         ],
-        "x": 121.5,
-        "y": 157.3000030517578,
+        "x": 75,
+        "y": 120,
         "wires": [
             [
-                "72a4f447.06677c",
                 "d63910a6.33bdc",
-                "d5cd0a3f.1a6b98",
-                "1fff1f1d.73c681"
+                "1fff1f1d.73c681",
+                "5a64984b.f910d8",
+                "a67ab057.67f8e"
             ]
         ]
     },
@@ -254,11 +254,11 @@
         "name": "mv",
         "group": "71f3ddca.b8fcc4",
         "order": 1,
-        "width": "0",
-        "height": "0",
-        "label": "",
+        "width": "8",
+        "height": "3",
+        "label": "MV",
         "chartType": "line",
-        "legend": "true",
+        "legend": "false",
         "xformat": "Y-M-D",
         "interpolate": "linear",
         "nodata": "",
@@ -297,7 +297,7 @@
         "pauseType": "rate",
         "timeout": "0.5",
         "timeoutUnits": "seconds",
-        "rate": "10",
+        "rate": "5",
         "nbRateUnits": "0.1",
         "rateUnits": "second",
         "randomFirst": "1",
@@ -759,11 +759,11 @@
         "type": "ui_chart",
         "z": "da1fb570.2fb978",
         "name": "stats",
-        "group": "1bd60359.b904bd",
+        "group": "71f3ddca.b8fcc4",
         "order": 0,
-        "width": 0,
-        "height": 0,
-        "label": "",
+        "width": "8",
+        "height": "4",
+        "label": "Stats",
         "chartType": "line",
         "legend": "true",
         "xformat": "HH:mm:ss",
@@ -789,8 +789,8 @@
             "#c5b0d5"
         ],
         "useOldStyle": false,
-        "x": 609,
-        "y": 302,
+        "x": 610,
+        "y": 220,
         "wires": [
             [],
             []
@@ -806,11 +806,12 @@
         "count": "10",
         "round": "",
         "mult": "single",
-        "x": 499,
-        "y": 192,
+        "x": 320,
+        "y": 160,
         "wires": [
             [
-                "5a64984b.f910d8"
+                "8c50ce.b0961f3",
+                "fc1da469.878328"
             ]
         ]
     },
@@ -824,65 +825,11 @@
         "count": "10",
         "round": "",
         "mult": "single",
-        "x": 326,
-        "y": 361,
+        "x": 380,
+        "y": 240,
         "wires": [
             [
                 "bfe26636.7b27d8"
-            ]
-        ]
-    },
-    {
-        "id": "72a4f447.06677c",
-        "type": "change",
-        "z": "da1fb570.2fb978",
-        "name": "raw",
-        "rules": [
-            {
-                "t": "set",
-                "p": "topic",
-                "pt": "msg",
-                "to": "Measured Value",
-                "tot": "str"
-            }
-        ],
-        "action": "",
-        "property": "",
-        "from": "",
-        "to": "",
-        "reg": false,
-        "x": 271,
-        "y": 130,
-        "wires": [
-            [
-                "5a64984b.f910d8"
-            ]
-        ]
-    },
-    {
-        "id": "d5cd0a3f.1a6b98",
-        "type": "change",
-        "z": "da1fb570.2fb978",
-        "name": "lo pass",
-        "rules": [
-            {
-                "t": "set",
-                "p": "topic",
-                "pt": "msg",
-                "to": "Low Pass Filter",
-                "tot": "str"
-            }
-        ],
-        "action": "",
-        "property": "",
-        "from": "",
-        "to": "",
-        "reg": false,
-        "x": 292,
-        "y": 196,
-        "wires": [
-            [
-                "a67ab057.67f8e"
             ]
         ]
     },
@@ -926,7 +873,8 @@
         "wires": [
             [
                 "5a64984b.f910d8",
-                "bfe26636.7b27d8"
+                "bfe26636.7b27d8",
+                "8c50ce.b0961f3"
             ]
         ]
     },
@@ -949,8 +897,8 @@
         "from": "",
         "to": "",
         "reg": false,
-        "x": 210.5,
-        "y": 271.6000061035156,
+        "x": 200,
+        "y": 220,
         "wires": [
             [
                 "91193fe3.f53d3"
@@ -976,8 +924,8 @@
         "from": "",
         "to": "",
         "reg": false,
-        "x": 125.5,
-        "y": 405.5999755859375,
+        "x": 170,
+        "y": 280,
         "wires": [
             [
                 "3d8e19de.e0c446"
@@ -994,11 +942,109 @@
         "count": "10",
         "round": "",
         "mult": "single",
-        "x": 361.5,
-        "y": 426.5999755859375,
+        "x": 330,
+        "y": 300,
         "wires": [
             [
                 "bfe26636.7b27d8"
+            ]
+        ]
+    },
+    {
+        "id": "8c50ce.b0961f3",
+        "type": "ui_chart",
+        "z": "da1fb570.2fb978",
+        "name": "lo pass",
+        "group": "71f3ddca.b8fcc4",
+        "order": 1,
+        "width": "8",
+        "height": "3",
+        "label": "Low Pass",
+        "chartType": "line",
+        "legend": "false",
+        "xformat": "Y-M-D",
+        "interpolate": "linear",
+        "nodata": "",
+        "dot": false,
+        "ymin": "0",
+        "ymax": "1",
+        "removeOlder": "1",
+        "removeOlderPoints": "500",
+        "removeOlderUnit": "604800",
+        "cutout": 0,
+        "useOneColor": false,
+        "colors": [
+            "#1f77b4",
+            "#abc5e8",
+            "#ff7f0e",
+            "#2ca02c",
+            "#98df8a",
+            "#d62728",
+            "#ff9896",
+            "#9467bd",
+            "#c5b0d5"
+        ],
+        "useOldStyle": false,
+        "x": 622,
+        "y": 148,
+        "wires": [
+            [],
+            []
+        ]
+    },
+    {
+        "id": "fc1da469.878328",
+        "type": "utilization",
+        "z": "da1fb570.2fb978",
+        "name": "",
+        "threshold": "0.25",
+        "x": 235,
+        "y": 396.5,
+        "wires": [
+            [
+                "3c081b31.1cd7d4"
+            ]
+        ]
+    },
+    {
+        "id": "9b2456f.b36cda8",
+        "type": "ui_gauge",
+        "z": "da1fb570.2fb978",
+        "name": "",
+        "group": "1bd60359.b904bd",
+        "order": 0,
+        "width": 0,
+        "height": 0,
+        "gtype": "gage",
+        "title": "Utilization",
+        "label": "%",
+        "format": "{{value | number:0}}",
+        "min": 0,
+        "max": "100",
+        "colors": [
+            "#ff0000",
+            "#ffff00",
+            "#80ff80"
+        ],
+        "seg1": "",
+        "seg2": "",
+        "x": 534,
+        "y": 392,
+        "wires": []
+    },
+    {
+        "id": "3c081b31.1cd7d4",
+        "type": "function",
+        "z": "da1fb570.2fb978",
+        "name": "x100",
+        "func": "msg.payload *=100;\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "x": 389.5,
+        "y": 384.6000061035156,
+        "wires": [
+            [
+                "9b2456f.b36cda8"
             ]
         ]
     }
