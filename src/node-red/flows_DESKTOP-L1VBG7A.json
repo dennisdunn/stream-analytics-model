@@ -129,8 +129,8 @@
             }
         },
         "site": {
-            "name": "Spinning Thing Monitor",
-            "hideToolbar": "false",
+            "name": "Monitor",
+            "hideToolbar": "true",
             "allowSwipe": "false",
             "dateFormat": "DD/MM/YYYY",
             "sizes": {
@@ -149,7 +149,7 @@
         "id": "5c0fb88.33d9d48",
         "type": "ui_tab",
         "z": "",
-        "name": "Spinning Thing Monitor",
+        "name": "Pump Monitor",
         "icon": "dashboard"
     },
     {
@@ -159,7 +159,7 @@
         "name": "MV",
         "tab": "5c0fb88.33d9d48",
         "order": 3,
-        "disp": true,
+        "disp": false,
         "width": "8",
         "collapse": false
     },
@@ -167,10 +167,10 @@
         "id": "1bd60359.b904bd",
         "type": "ui_group",
         "z": "",
-        "name": "Processed",
+        "name": "Stats",
         "tab": "5c0fb88.33d9d48",
         "order": 4,
-        "disp": true,
+        "disp": false,
         "width": "8",
         "collapse": false
     },
@@ -240,8 +240,10 @@
         "y": 157.3000030517578,
         "wires": [
             [
-                "692362b0.2df92c",
-                "cfae0a0b.b28d28"
+                "72a4f447.06677c",
+                "d63910a6.33bdc",
+                "d5cd0a3f.1a6b98",
+                "1fff1f1d.73c681"
             ]
         ]
     },
@@ -249,14 +251,14 @@
         "id": "5a64984b.f910d8",
         "type": "ui_chart",
         "z": "da1fb570.2fb978",
-        "name": "",
+        "name": "mv",
         "group": "71f3ddca.b8fcc4",
         "order": 1,
         "width": "0",
         "height": "0",
         "label": "",
         "chartType": "line",
-        "legend": "false",
+        "legend": "true",
         "xformat": "Y-M-D",
         "interpolate": "linear",
         "nodata": "",
@@ -264,13 +266,13 @@
         "ymin": "0",
         "ymax": "1",
         "removeOlder": "1",
-        "removeOlderPoints": "100",
+        "removeOlderPoints": "500",
         "removeOlderUnit": "604800",
         "cutout": 0,
         "useOneColor": false,
         "colors": [
             "#1f77b4",
-            "#aec7e8",
+            "#abc5e8",
             "#ff7f0e",
             "#2ca02c",
             "#98df8a",
@@ -279,25 +281,12 @@
             "#9467bd",
             "#c5b0d5"
         ],
-        "useOldStyle": true,
-        "x": 574.5,
-        "y": 93.34999084472656,
+        "useOldStyle": false,
+        "x": 608,
+        "y": 90,
         "wires": [
             [],
             []
-        ]
-    },
-    {
-        "id": "692362b0.2df92c",
-        "type": "chartable",
-        "z": "da1fb570.2fb978",
-        "name": "",
-        "x": 364.5,
-        "y": 119.14999389648438,
-        "wires": [
-            [
-                "5a64984b.f910d8"
-            ]
         ]
     },
     {
@@ -308,15 +297,15 @@
         "pauseType": "rate",
         "timeout": "0.5",
         "timeoutUnits": "seconds",
-        "rate": "1",
+        "rate": "10",
         "nbRateUnits": "0.1",
         "rateUnits": "second",
         "randomFirst": "1",
         "randomLast": "5",
         "randomUnits": "seconds",
         "drop": false,
-        "x": 508.5,
-        "y": 187.60000610351562,
+        "x": 470,
+        "y": 180,
         "wires": [
             [
                 "40db0525.ebc17c"
@@ -331,8 +320,8 @@
         "links": [
             "40db0525.ebc17c"
         ],
-        "x": 95.5,
-        "y": 84.30000305175781,
+        "x": 155,
+        "y": 60,
         "wires": [
             [
                 "97ef341a.e57458"
@@ -388,8 +377,8 @@
         "z": "f23fd930.df06e8",
         "name": "modified data src",
         "links": [],
-        "x": 578.5,
-        "y": 249.44998168945312,
+        "x": 555,
+        "y": 240,
         "wires": []
     },
     {
@@ -400,8 +389,8 @@
         "func": "var state = flow.get('utilization')||{idx:0, start:0, on:0};\nif(state.start == 0){\n    state.start = msg.payload.timestamp;\n}\nif(state.idx+1 == msg.n){\n    state.on += msg.delta;\n}\nstate.idx = msg.n;\nflow.set('utilization', state);\nvar t = msg.payload.timestamp - state.start + 1;\nvar u = state.on / t;\nreturn {\n    topic: 'utilization-kpi',\n    payload: u\n};",
         "outputs": 1,
         "noerr": 0,
-        "x": 482.5,
-        "y": 155.59999084472656,
+        "x": 440,
+        "y": 160,
         "wires": [
             [
                 "a0363a7e.0c4be8"
@@ -427,8 +416,8 @@
         "from": "",
         "to": "",
         "reg": false,
-        "x": 412.5,
-        "y": 74.60000610351562,
+        "x": 360,
+        "y": 60,
         "wires": [
             [
                 "68087e91.44487"
@@ -712,7 +701,8 @@
         "name": "selected dataset",
         "links": [
             "c147c8ce.a8dc08",
-            "76ae1269.1fbd4c"
+            "76ae1269.1fbd4c",
+            "fa1a261e.568eb8"
         ],
         "x": 553.5,
         "y": 441.4499816894531,
@@ -739,7 +729,7 @@
         "type": "function",
         "z": "4ac16241.21974c",
         "name": "timestamp",
-        "func": "if(msg.payload.startsWith('#')) return null;\nvar t = flow.get('timestamp')||0;\nvar sample = {\n    timestamp:t,\n    value:+msg.payload\n};\nt += 3.6e5;\nflow.set('timestamp', t);\nmsg.payload = sample;\nreturn msg;",
+        "func": "// ignore comments\nif(msg.payload.startsWith('#')) return null;\n\nvar t = flow.get('timestamp')||0;\n\ndelete msg.filename;\nmsg.topic='timeseries';\nmsg.payload = +msg.payload;\nmsg.timestamp = t;\n\n// 1 hr\nt += 3.6e5;\nflow.set('timestamp', t);\n\nreturn msg;",
         "outputs": 1,
         "noerr": 0,
         "x": 421.5,
@@ -765,26 +755,158 @@
         ]
     },
     {
-        "id": "76ae1269.1fbd4c",
+        "id": "bfe26636.7b27d8",
+        "type": "ui_chart",
+        "z": "da1fb570.2fb978",
+        "name": "stats",
+        "group": "1bd60359.b904bd",
+        "order": 0,
+        "width": 0,
+        "height": 0,
+        "label": "",
+        "chartType": "line",
+        "legend": "true",
+        "xformat": "HH:mm:ss",
+        "interpolate": "linear",
+        "nodata": "",
+        "dot": false,
+        "ymin": "0",
+        "ymax": "1",
+        "removeOlder": 1,
+        "removeOlderPoints": "500",
+        "removeOlderUnit": "604800",
+        "cutout": 0,
+        "useOneColor": false,
+        "colors": [
+            "#1f77b4",
+            "#aec7e8",
+            "#ff7f0e",
+            "#2ca02c",
+            "#98df8a",
+            "#d62728",
+            "#ff9896",
+            "#9467bd",
+            "#c5b0d5"
+        ],
+        "useOldStyle": false,
+        "x": 609,
+        "y": 302,
+        "wires": [
+            [],
+            []
+        ]
+    },
+    {
+        "id": "a67ab057.67f8e",
+        "type": "smooth",
+        "z": "da1fb570.2fb978",
+        "name": "lo pass",
+        "property": "payload",
+        "action": "low",
+        "count": "10",
+        "round": "",
+        "mult": "single",
+        "x": 499,
+        "y": 192,
+        "wires": [
+            [
+                "5a64984b.f910d8"
+            ]
+        ]
+    },
+    {
+        "id": "91193fe3.f53d3",
+        "type": "smooth",
+        "z": "da1fb570.2fb978",
+        "name": "std dev",
+        "property": "payload",
+        "action": "sd",
+        "count": "10",
+        "round": "",
+        "mult": "single",
+        "x": 326,
+        "y": 361,
+        "wires": [
+            [
+                "bfe26636.7b27d8"
+            ]
+        ]
+    },
+    {
+        "id": "72a4f447.06677c",
+        "type": "change",
+        "z": "da1fb570.2fb978",
+        "name": "raw",
+        "rules": [
+            {
+                "t": "set",
+                "p": "topic",
+                "pt": "msg",
+                "to": "Measured Value",
+                "tot": "str"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 271,
+        "y": 130,
+        "wires": [
+            [
+                "5a64984b.f910d8"
+            ]
+        ]
+    },
+    {
+        "id": "d5cd0a3f.1a6b98",
+        "type": "change",
+        "z": "da1fb570.2fb978",
+        "name": "lo pass",
+        "rules": [
+            {
+                "t": "set",
+                "p": "topic",
+                "pt": "msg",
+                "to": "Low Pass Filter",
+                "tot": "str"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 292,
+        "y": 196,
+        "wires": [
+            [
+                "a67ab057.67f8e"
+            ]
+        ]
+    },
+    {
+        "id": "fa1a261e.568eb8",
         "type": "link in",
         "z": "da1fb570.2fb978",
         "name": "",
         "links": [
             "b4121f6d.bb16"
         ],
-        "x": 179.5,
-        "y": 45.29998779296875,
+        "x": 69.5,
+        "y": 47.29999542236328,
         "wires": [
             [
-                "40f30eaf.1a142"
+                "c85e9ab8.529328"
             ]
         ]
     },
     {
-        "id": "40f30eaf.1a142",
+        "id": "c85e9ab8.529328",
         "type": "change",
         "z": "da1fb570.2fb978",
-        "name": "clear",
+        "name": "clear the chrts",
         "rules": [
             {
                 "t": "set",
@@ -799,163 +921,81 @@
         "from": "",
         "to": "",
         "reg": false,
-        "x": 354.5,
-        "y": 60.600006103515625,
+        "x": 215.5,
+        "y": 45.599998474121094,
         "wires": [
             [
                 "5a64984b.f910d8",
-                "ca0e5db9.3998f",
                 "bfe26636.7b27d8"
             ]
         ]
     },
     {
-        "id": "d4ed678f.2ccf58",
-        "type": "mean",
+        "id": "d63910a6.33bdc",
+        "type": "change",
         "z": "da1fb570.2fb978",
-        "name": "",
-        "size": "5",
-        "x": 276.5,
-        "y": 183.14999389648438,
+        "name": "std dev",
+        "rules": [
+            {
+                "t": "set",
+                "p": "topic",
+                "pt": "msg",
+                "to": "Std Dev",
+                "tot": "str"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 210.5,
+        "y": 271.6000061035156,
         "wires": [
             [
-                "3f1e8871.bc29e8"
+                "91193fe3.f53d3"
             ]
         ]
     },
     {
-        "id": "3f1e8871.bc29e8",
-        "type": "chartable",
-        "z": "da1fb570.2fb978",
-        "name": "",
-        "x": 387.5,
-        "y": 260.1499938964844,
-        "wires": [
-            [
-                "ca0e5db9.3998f"
-            ]
-        ]
-    },
-    {
-        "id": "ca0e5db9.3998f",
-        "type": "ui_chart",
+        "id": "1fff1f1d.73c681",
+        "type": "change",
         "z": "da1fb570.2fb978",
         "name": "mean",
-        "group": "1bd60359.b904bd",
-        "order": 0,
-        "width": 0,
-        "height": 0,
-        "label": "Mean",
-        "chartType": "line",
-        "legend": "false",
-        "xformat": "HH:mm:ss",
-        "interpolate": "linear",
-        "nodata": "",
-        "dot": false,
-        "ymin": "0",
-        "ymax": "1",
-        "removeOlder": 1,
-        "removeOlderPoints": "100",
-        "removeOlderUnit": "604800",
-        "cutout": 0,
-        "useOneColor": false,
-        "colors": [
-            "#1f77b4",
-            "#aec7e8",
-            "#ff7f0e",
-            "#2ca02c",
-            "#98df8a",
-            "#d62728",
-            "#ff9896",
-            "#9467bd",
-            "#c5b0d5"
+        "rules": [
+            {
+                "t": "set",
+                "p": "topic",
+                "pt": "msg",
+                "to": "Mean",
+                "tot": "str"
+            }
         ],
-        "useOldStyle": false,
-        "x": 571.5,
-        "y": 205.85000610351562,
-        "wires": [
-            [],
-            []
-        ]
-    },
-    {
-        "id": "cfae0a0b.b28d28",
-        "type": "threshold",
-        "z": "da1fb570.2fb978",
-        "name": "",
-        "threshold": "0.25",
-        "x": 144.5,
-        "y": 359.1499938964844,
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 125.5,
+        "y": 405.5999755859375,
         "wires": [
             [
-                "d4ed678f.2ccf58",
-                "b4fde783.908558"
+                "3d8e19de.e0c446"
             ]
         ]
     },
     {
-        "id": "b4fde783.908558",
-        "type": "median",
+        "id": "3d8e19de.e0c446",
+        "type": "smooth",
         "z": "da1fb570.2fb978",
-        "name": "",
-        "size": 3,
-        "x": 363.5,
-        "y": 380.1499938964844,
-        "wires": [
-            [
-                "7396d512.2e8e0c"
-            ]
-        ]
-    },
-    {
-        "id": "bfe26636.7b27d8",
-        "type": "ui_chart",
-        "z": "da1fb570.2fb978",
-        "name": "median",
-        "group": "1bd60359.b904bd",
-        "order": 0,
-        "width": 0,
-        "height": 0,
-        "label": "Median",
-        "chartType": "line",
-        "legend": "false",
-        "xformat": "HH:mm:ss",
-        "interpolate": "linear",
-        "nodata": "",
-        "dot": false,
-        "ymin": "0",
-        "ymax": "1",
-        "removeOlder": 1,
-        "removeOlderPoints": "100",
-        "removeOlderUnit": "604800",
-        "cutout": 0,
-        "useOneColor": false,
-        "colors": [
-            "#1f77b4",
-            "#aec7e8",
-            "#ff7f0e",
-            "#2ca02c",
-            "#98df8a",
-            "#d62728",
-            "#ff9896",
-            "#9467bd",
-            "#c5b0d5"
-        ],
-        "useOldStyle": false,
-        "x": 562,
-        "y": 351,
-        "wires": [
-            [],
-            []
-        ]
-    },
-    {
-        "id": "7396d512.2e8e0c",
-        "type": "chartable",
-        "z": "da1fb570.2fb978",
-        "name": "",
-        "x": 507.5,
-        "y": 443.1499938964844,
+        "name": "mean",
+        "property": "payload",
+        "action": "mean",
+        "count": "10",
+        "round": "",
+        "mult": "single",
+        "x": 361.5,
+        "y": 426.5999755859375,
         "wires": [
             [
                 "bfe26636.7b27d8"

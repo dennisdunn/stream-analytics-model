@@ -1,5 +1,5 @@
 <script type="text/javascript">
-    RED.nodes.registerType('mean', {
+    RED.nodes.registerType('differencing', {
         category: 'streams',
         color: '#E9967A',
         defaults: {
@@ -10,22 +10,19 @@
         outputs: 1,
         icon: "file.png",
         label: function () {
-            return this.name || "mean";
+            return this.name || "differencing";
         }
     });
 </script>
 
-<script type="text/x-red" data-template-name="mean">
+<script type="text/x-red" data-template-name="differencing">
     <div class="form-row">
         <label for="node-input-name"><i class="icon-tag"></i>Name</label>
         <input type="text" id="node-input-name" placeholder="Name">
     </div>
-    <div class="form-row">
-        <label for="node-input-size"><i class="icon-tag"></i>Size</label>
-        <input type="number" id="node-input-size" placeholder="Size">
-    </div>
 </script>
 
-<script type="text/x-red" data-help-name="mean">
-    <p>Change the payload to be the mean of the payloads of the previous n messages.</p>
+<script type="text/x-red" data-help-name="differencing">
+    <p>'Difference' the data stream.</p>
+    <p>new_payload = current_payload - prev_payload</p>
 </script>

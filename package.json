@@ -19,5 +19,7 @@
   },
   "author": "Dennis Dunn <ansofive@gmail.com>",
   "license": "MIT",
-  "dependencies": {}
+  "dependencies": {
+    "node-red-node-smooth": "^0.1.0"
+  }
 }

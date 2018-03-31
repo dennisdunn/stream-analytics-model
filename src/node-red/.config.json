@@ -350,17 +350,6 @@
      "module": "node-red",
      "file": "C:\\Users\\Dennis\\AppData\\Roaming\\npm\\node_modules\\node-red\\nodes\\core\\storage\\50-file.js"
     },
-    "chartable": {
-     "name": "chartable",
-     "types": [
-      "indexer",
-      "chartable"
-     ],
-     "enabled": true,
-     "local": false,
-     "module": "node-red",
-     "file": "c:\\users\\dennis\\Documents\\StirTrek-2018\\stream-analytics-model\\src\\nodes\\chartable.js"
-    },
     "indexer": {
      "name": "indexer",
      "types": [
@@ -370,26 +359,6 @@
      "local": false,
      "module": "node-red",
      "file": "c:\\users\\dennis\\Documents\\StirTrek-2018\\stream-analytics-model\\src\\nodes\\indexer.js"
-    },
-    "mean": {
-     "name": "mean",
-     "types": [
-      "mean"
-     ],
-     "enabled": true,
-     "local": false,
-     "module": "node-red",
-     "file": "c:\\users\\dennis\\Documents\\StirTrek-2018\\stream-analytics-model\\src\\nodes\\mean.js"
-    },
-    "median": {
-     "name": "median",
-     "types": [
-      "median"
-     ],
-     "enabled": true,
-     "local": false,
-     "module": "node-red",
-     "file": "c:\\users\\dennis\\Documents\\StirTrek-2018\\stream-analytics-model\\src\\nodes\\median.js"
     },
     "threshold": {
      "name": "threshold",
@@ -410,6 +379,16 @@
      "local": false,
      "module": "node-red",
      "file": "c:\\users\\dennis\\Documents\\StirTrek-2018\\stream-analytics-model\\src\\nodes\\window.js"
+    },
+    "differencing": {
+     "name": "differencing",
+     "types": [
+      "differencing"
+     ],
+     "enabled": true,
+     "local": false,
+     "module": "node-red",
+     "file": "c:\\users\\dennis\\Documents\\StirTrek-2018\\stream-analytics-model\\src\\nodes\\differencing.js"
     }
    }
   },
@@ -688,6 +667,23 @@
      "local": true,
      "module": "node-red-dashboard",
      "file": "C:\\Users\\Dennis\\Documents\\StirTrek-2018\\stream-analytics-model\\src\\node-red\\node_modules\\node-red-dashboard\\nodes\\ui_group.js"
+    }
+   }
+  },
+  "node-red-node-smooth": {
+   "name": "node-red-node-smooth",
+   "version": "0.1.0",
+   "local": true,
+   "nodes": {
+    "smooth": {
+     "name": "smooth",
+     "types": [
+      "smooth"
+     ],
+     "enabled": true,
+     "local": true,
+     "module": "node-red-node-smooth",
+     "file": "C:\\Users\\Dennis\\Documents\\StirTrek-2018\\stream-analytics-model\\src\\node-red\\node_modules\\node-red-node-smooth\\17-smooth.js"
     }
    }
   }

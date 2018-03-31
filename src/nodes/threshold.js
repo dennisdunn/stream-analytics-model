@@ -4,7 +4,7 @@ module.exports = function (RED) {
         this.threshold = config.threshold;
         var node = this;
         node.on('input', msg => {
-            if (!Number.isFinite(msg.payload)|| (msg.payload >= node.threshold)) {
+            if (!Number.isFinite(msg.payload) || (msg.payload >= node.threshold)) {
                 node.send(msg);
             }
         });
