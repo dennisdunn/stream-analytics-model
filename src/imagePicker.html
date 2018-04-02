@@ -1,0 +1,9 @@
+<div style='max-height:350px; overflow:scroll;overflow-x: hidden;'>
+    <ul ng-repeat='item in msg.payload' id='imagelist' style='list-style-type: none;list-style-position: inside;padding-left:0;'>
+        <li>
+            <md-button ng-click="send({payload:item})">
+                <img ng-src="/{{item}}" style="width:95%;height:95%;" />
+            </md-button>
+        </li>
+    </ul>
+</div>
