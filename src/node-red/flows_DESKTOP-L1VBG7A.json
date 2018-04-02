@@ -9,7 +9,7 @@
     {
         "id": "2f26069e.9e18ea",
         "type": "tab",
-        "label": "data source",
+        "label": "data loader",
         "disabled": false,
         "info": ""
     },
@@ -178,7 +178,7 @@
         "id": "ff0e54a0.6e8fa8",
         "type": "ui_group",
         "z": "",
-        "name": "Datasets",
+        "name": "Data Catalog",
         "tab": "5c0fb88.33d9d48",
         "order": 1,
         "disp": true,
@@ -237,8 +237,8 @@
         "links": [
             "40db0525.ebc17c"
         ],
-        "x": 83,
-        "y": 120,
+        "x": 60,
+        "y": 143,
         "wires": [
             [
                 "d63910a6.33bdc",
@@ -346,10 +346,10 @@
         "z": "2f26069e.9e18ea",
         "name": "",
         "links": [
-            "b4121f6d.bb16"
+            "734756ea.432ee8"
         ],
-        "x": 109.5,
-        "y": 297.29998779296875,
+        "x": 193.5,
+        "y": 286.29998779296875,
         "wires": [
             [
                 "b13fa7c5.aa7388"
@@ -375,7 +375,7 @@
         "type": "function",
         "z": "4ac16241.21974c",
         "name": "set fname",
-        "func": "msg.filename='data/'+msg.payload+'.csv';\nreturn msg;",
+        "func": "var fname=msg.payload.split('.')[0];\nmsg.filename='data/'+fname+'.csv';\nreturn msg;",
         "outputs": 1,
         "noerr": 0,
         "x": 212.5,
@@ -452,7 +452,7 @@
         "z": "da1fb570.2fb978",
         "name": "clear charts",
         "links": [
-            "b4121f6d.bb16"
+            "734756ea.432ee8"
         ],
         "x": 69.5,
         "y": 47.29999542236328,
@@ -778,7 +778,7 @@
         "order": 0,
         "width": 0,
         "height": 0,
-        "format": "<div style='height:300px;max-height:350px; overflow:scroll;overflow-x: hidden;'>\n    <ul ng-repeat='item in msg.payload' id='imagelist' style='list-style-type: none;list-style-position: inside;padding-left:0;'>\n        <li>\n            <md-button ng-click=\"send({payload:item})\">\n                <img ng-src=\"/{{item}}\" style=\"width:95%;height:95%;\" />\n            </md-button>\n        </li>\n    </ul>\n</div>",
+        "format": "<div style='height:90vh; overflow:scroll;overflow-x: hidden;'>\n    <ul ng-repeat='item in msg.payload' id='imagelist' style='list-style-type: none;list-style-position: inside;padding-left:0;'>\n        <li>\n            <md-button ng-click=\"send({payload:item})\" style=\"padding-top:0.5rem;padding-bottom:0.5rem;\">\n                <img ng-src=\"/{{item}}\" style=\"width:95%;height:95%;\" />\n            </md-button>\n        </li>\n    </ul>\n</div>",
         "storeOutMessages": false,
         "fwdInMessages": false,
         "templateScope": "local",
@@ -786,8 +786,7 @@
         "y": 254.75,
         "wires": [
             [
-                "734756ea.432ee8",
-                "ca374392.0b511"
+                "734756ea.432ee8"
             ]
         ]
     },
@@ -824,23 +823,14 @@
         ]
     },
     {
-        "id": "ca374392.0b511",
-        "type": "debug",
-        "z": "f87f73ed.ba341",
-        "name": "",
-        "active": true,
-        "console": "false",
-        "complete": "false",
-        "x": 521.5,
-        "y": 347.4499816894531,
-        "wires": []
-    },
-    {
         "id": "734756ea.432ee8",
         "type": "link out",
         "z": "f87f73ed.ba341",
-        "name": "new selected datafile",
-        "links": [],
+        "name": "selected datafile",
+        "links": [
+            "c147c8ce.a8dc08",
+            "fa1a261e.568eb8"
+        ],
         "x": 526.5,
         "y": 223.44998168945312,
         "wires": []
