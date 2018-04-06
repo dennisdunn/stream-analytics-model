@@ -2,7 +2,7 @@
  "nodes": {
   "node-red": {
    "name": "node-red",
-   "version": "0.17.5",
+   "version": "0.18.4",
    "local": false,
    "nodes": {
     "sentiment": {
@@ -399,12 +399,32 @@
      "local": false,
      "module": "node-red",
      "file": "c:\\users\\dennis\\Documents\\StirTrek-2018\\stream-analytics-model\\src\\nodes\\utilization.js"
+    },
+    "sort": {
+     "name": "sort",
+     "types": [
+      "sort"
+     ],
+     "enabled": true,
+     "local": false,
+     "module": "node-red",
+     "file": "C:\\Users\\Dennis\\AppData\\Roaming\\npm\\node_modules\\node-red\\nodes\\core\\logic\\18-sort.js"
+    },
+    "batch": {
+     "name": "batch",
+     "types": [
+      "batch"
+     ],
+     "enabled": true,
+     "local": false,
+     "module": "node-red",
+     "file": "C:\\Users\\Dennis\\AppData\\Roaming\\npm\\node_modules\\node-red\\nodes\\core\\logic\\19-batch.js"
     }
    }
   },
   "node-red-node-email": {
    "name": "node-red-node-email",
-   "version": "0.1.24",
+   "version": "0.1.27",
    "local": false,
    "nodes": {
     "email": {
@@ -422,7 +442,7 @@
   },
   "node-red-node-feedparser": {
    "name": "node-red-node-feedparser",
-   "version": "0.1.8",
+   "version": "0.1.12",
    "local": false,
    "nodes": {
     "feedparse": {
@@ -439,7 +459,7 @@
   },
   "node-red-node-rbe": {
    "name": "node-red-node-rbe",
-   "version": "0.1.14",
+   "version": "0.2.3",
    "local": false,
    "nodes": {
     "rbe": {
@@ -456,7 +476,7 @@
   },
   "node-red-node-twitter": {
    "name": "node-red-node-twitter",
-   "version": "0.1.12",
+   "version": "0.1.13",
    "local": false,
    "nodes": {
     "twitter": {
@@ -475,7 +495,7 @@
   },
   "node-red-dashboard": {
    "name": "node-red-dashboard",
-   "version": "2.8.1",
+   "version": "2.8.2",
    "local": true,
    "nodes": {
     "ui_base": {
@@ -698,5 +718,18 @@
    }
   }
  },
- "_credentialSecret": "8a3089ae9cf3e45be94c69edf192d9cf63a73ae387364cf2a6f5e438ec8fda4c"
+ "_credentialSecret": "8a3089ae9cf3e45be94c69edf192d9cf63a73ae387364cf2a6f5e438ec8fda4c",
+ "users": {
+  "_": {
+   "editor": {
+    "view": {
+     "view-grid-size": 20,
+     "view-node-status": true,
+     "view-show-tips": false,
+     "view-snap-grid": true,
+     "view-show-grid": true
+    }
+   }
+  }
+ }
 }

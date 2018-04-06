@@ -3,7 +3,7 @@
   "description": "A Node-RED Project",
   "version": "0.1.0",
   "dependencies": {
-    "node-red-dashboard": "^2.4.3",
+    "node-red-dashboard": "^2.8.2",
     "node-red-node-smooth": "^0.1.0"
   }
 }
