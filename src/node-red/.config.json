@@ -419,6 +419,16 @@
      "local": false,
      "module": "node-red",
      "file": "C:\\Users\\Dennis\\AppData\\Roaming\\npm\\node_modules\\node-red\\nodes\\core\\logic\\19-batch.js"
+    },
+    "regression": {
+     "name": "regression",
+     "types": [
+      "regression"
+     ],
+     "enabled": true,
+     "local": false,
+     "module": "node-red",
+     "file": "c:\\users\\dennis\\Documents\\StirTrek-2018\\stream-analytics-model\\src\\nodes\\regression.js"
     }
    }
   },

@@ -28,6 +28,13 @@
         "info": "Calculate the percentage of time that the signal is above a given threshold."
     },
     {
+        "id": "85a05cda.a32ed",
+        "type": "tab",
+        "label": "tuf kpi",
+        "disabled": false,
+        "info": "Predict when the signal will be \ngreater than a threshold."
+    },
+    {
         "id": "b4e37829.653658",
         "type": "ui_base",
         "theme": {
@@ -138,7 +145,7 @@
         "id": "1bd60359.b904bd",
         "type": "ui_group",
         "z": "",
-        "name": "Stats",
+        "name": "KPI",
         "tab": "5c0fb88.33d9d48",
         "order": 4,
         "disp": false,
@@ -163,7 +170,8 @@
         "name": "data source",
         "links": [
             "c875de8c.bb91b",
-            "eda3d4d4.ae6e28"
+            "eda3d4d4.ae6e28",
+            "af695146.0f223"
         ],
         "x": 614.5,
         "y": 92.44998168945312,
@@ -182,9 +190,9 @@
         "wires": [
             [
                 "d63910a6.33bdc",
-                "1fff1f1d.73c681",
                 "5a64984b.f910d8",
-                "34ff438a.c3c81c"
+                "34ff438a.c3c81c",
+                "1fff1f1d.73c681"
             ]
         ]
     },
@@ -238,8 +246,8 @@
         "pauseType": "rate",
         "timeout": "0.5",
         "timeoutUnits": "seconds",
-        "rate": "5",
-        "nbRateUnits": "0.1",
+        "rate": "1",
+        "nbRateUnits": ".1",
         "rateUnits": "second",
         "randomFirst": "1",
         "randomLast": "5",
@@ -309,7 +317,7 @@
         "label": "Stats",
         "chartType": "line",
         "legend": "true",
-        "xformat": "HH:mm:ss",
+        "xformat": "Y-M-D",
         "interpolate": "linear",
         "nodata": "",
         "dot": false,
@@ -377,7 +385,7 @@
         "id": "c85e9ab8.529328",
         "type": "change",
         "z": "da1fb570.2fb978",
-        "name": "reset",
+        "name": "reset charts",
         "rules": [
             {
                 "t": "set",
@@ -392,8 +400,8 @@
         "from": "",
         "to": "",
         "reg": false,
-        "x": 230,
-        "y": 20,
+        "x": 250,
+        "y": 40,
         "wires": [
             [
                 "5a64984b.f910d8",
@@ -426,33 +434,6 @@
         "wires": [
             [
                 "91193fe3.f53d3"
-            ]
-        ]
-    },
-    {
-        "id": "1fff1f1d.73c681",
-        "type": "change",
-        "z": "da1fb570.2fb978",
-        "name": "mean",
-        "rules": [
-            {
-                "t": "set",
-                "p": "topic",
-                "pt": "msg",
-                "to": "Mean",
-                "tot": "str"
-            }
-        ],
-        "action": "",
-        "property": "",
-        "from": "",
-        "to": "",
-        "reg": false,
-        "x": 170,
-        "y": 280,
-        "wires": [
-            [
-                "3d8e19de.e0c446"
             ]
         ]
     },
@@ -570,7 +551,7 @@
         "z": "af482ebc.20131",
         "name": "",
         "group": "1bd60359.b904bd",
-        "order": 0,
+        "order": 1,
         "width": 0,
         "height": 0,
         "gtype": "gage",
@@ -620,7 +601,8 @@
         "y": 151.59999084472656,
         "wires": [
             [
-                "8c50ce.b0961f3"
+                "8c50ce.b0961f3",
+                "f228e4.8c82d72"
             ]
         ]
     },
@@ -629,14 +611,14 @@
         "type": "exec",
         "z": "f87f73ed.ba341",
         "command": "ls",
-        "addpay": false,
-        "append": "static",
+        "addpay": true,
+        "append": "",
         "useSpawn": "false",
         "timer": "",
         "oldrc": false,
         "name": "list the data sets",
-        "x": 220,
-        "y": 160,
+        "x": 200,
+        "y": 280,
         "wires": [
             [
                 "53e224c.4ad7adc"
@@ -669,7 +651,7 @@
         "type": "function",
         "z": "f87f73ed.ba341",
         "name": "filter empty str",
-        "func": "if(msg.payload === \"\") return null;\nreturn msg;",
+        "func": "if(msg.payload === \"\") return null;\nmsg.payload = '/'+context.global.catalog +'/pic/'+msg.payload;\nreturn msg;",
         "outputs": 1,
         "noerr": 0,
         "x": 473,
@@ -689,11 +671,11 @@
         "order": 0,
         "width": 0,
         "height": 0,
-        "format": "<div style='height:90vh; overflow:scroll;overflow-x: hidden;'>\n    <ul ng-repeat='item in msg.payload' id='imagelist' style='list-style-type: none;list-style-position: inside;padding-left:0;'>\n        <li>\n            <md-button ng-click=\"send({payload:item})\" style=\"padding-top:0.5rem;padding-bottom:0.5rem;\">\n                <img ng-src=\"/{{item}}\" style=\"width:95%;height:95%;\" />\n            </md-button>\n        </li>\n    </ul>\n</div>",
+        "format": "<div style='height:90vh; overflow:scroll;overflow-x: hidden;'>\n    <ul ng-repeat='item in msg.payload' id='imagelist' style='list-style-type: none;list-style-position: inside;padding-left:0;'>\n        <li>\n            <md-button ng-click=\"send({payload:item})\" style=\"padding-top:0.5rem;padding-bottom:0.5rem;\">\n                <img ng-src=\"{{item}}\" style=\"width:95%;height:95%;\" />\n            </md-button>\n        </li>\n    </ul>\n</div>",
         "storeOutMessages": false,
         "fwdInMessages": false,
         "templateScope": "local",
-        "x": 380,
+        "x": 420,
         "y": 260,
         "wires": [
             [
@@ -710,7 +692,7 @@
         "y": 66.75,
         "wires": [
             [
-                "d53fd991.40e5b8"
+                "ee7cb39b.d8355"
             ]
         ]
     },
@@ -722,8 +704,8 @@
         "links": [
             "c147c8ce.a8dc08"
         ],
-        "x": 526.5,
-        "y": 223.44998168945312,
+        "x": 555,
+        "y": 240,
         "wires": []
     },
     {
@@ -741,30 +723,11 @@
         "accumulate": false,
         "timeout": "1",
         "count": "",
-        "x": 440.5,
-        "y": 146.59999084472656,
+        "x": 470,
+        "y": 160,
         "wires": [
             [
                 "ebba2f76.1137"
-            ]
-        ]
-    },
-    {
-        "id": "ee993a6b.b738f8",
-        "type": "inject",
-        "z": "f87f73ed.ba341",
-        "name": "init",
-        "topic": "",
-        "payload": "",
-        "payloadType": "date",
-        "repeat": "",
-        "crontab": "",
-        "once": true,
-        "x": 81.5,
-        "y": 281.29998779296875,
-        "wires": [
-            [
-                "d53fd991.40e5b8"
             ]
         ]
     },
@@ -773,7 +736,7 @@
         "type": "function",
         "z": "2f26069e.9e18ea",
         "name": "set fname",
-        "func": "var fname=msg.payload.split('.')[0];\nmsg.filename='data/'+fname+'.csv';\nreturn msg;",
+        "func": "var info = context.global.path.parse(msg.payload);\nmsg.filename=context.global.catalog + '/dat/'+info.name+'.csv';\nreturn msg;",
         "outputs": 1,
         "noerr": 0,
         "x": 140,
@@ -806,7 +769,7 @@
         "type": "function",
         "z": "2f26069e.9e18ea",
         "name": "timestamp",
-        "func": "// ignore comments\nif(msg.payload.startsWith('#')) return null;\n\nvar t = flow.get('timestamp')||0;\n\ndelete msg.filename;\nmsg.topic='timeseries';\nmsg.payload = +msg.payload;\nmsg.timestamp = t;\n\n// 1 hr\nt += 3.6e5;\nflow.set('timestamp', t);\n\nreturn msg;",
+        "func": "// ignore comments\nif(msg.payload.startsWith('#')) return null;\n\nvar t = flow.get('timestamp')||0;\n\ndelete msg.filename;\nmsg.topic='timeseries';\nmsg.payload = +msg.payload;\nmsg.timestamp = t;\n\n// 1 hr\nt += 3.6e6;\nflow.set('timestamp', t);\n\nreturn msg;",
         "outputs": 1,
         "noerr": 0,
         "x": 370,
@@ -880,22 +843,9 @@
         "y": 160,
         "wires": [
             [
-                "40db0525.ebc17c",
-                "dc602480.f47b48"
+                "40db0525.ebc17c"
             ]
         ]
-    },
-    {
-        "id": "dc602480.f47b48",
-        "type": "debug",
-        "z": "2f26069e.9e18ea",
-        "name": "",
-        "active": true,
-        "console": "false",
-        "complete": "false",
-        "x": 712,
-        "y": 213.5,
-        "wires": []
     },
     {
         "id": "7edee51d.31b6cc",
@@ -903,7 +853,8 @@
         "z": "2f26069e.9e18ea",
         "name": "reset signal",
         "links": [
-            "fa1a261e.568eb8"
+            "fa1a261e.568eb8",
+            "cd85f501.162d08"
         ],
         "x": 412,
         "y": 35,
@@ -928,5 +879,309 @@
                 "72eadb40.7f55c4"
             ]
         ]
+    },
+    {
+        "id": "af695146.0f223",
+        "type": "link in",
+        "z": "85a05cda.a32ed",
+        "name": "",
+        "links": [
+            "40db0525.ebc17c"
+        ],
+        "x": 175,
+        "y": 60,
+        "wires": [
+            [
+                "8e6ab914.dd7d28"
+            ]
+        ]
+    },
+    {
+        "id": "8e6ab914.dd7d28",
+        "type": "window",
+        "z": "85a05cda.a32ed",
+        "name": "",
+        "size": "3",
+        "rolling": false,
+        "x": 180,
+        "y": 160,
+        "wires": [
+            [
+                "6a2235b6.9a47ec"
+            ]
+        ]
+    },
+    {
+        "id": "6a2235b6.9a47ec",
+        "type": "regression",
+        "z": "85a05cda.a32ed",
+        "name": "",
+        "x": 190,
+        "y": 300,
+        "wires": [
+            [
+                "263fb80a.1f2298",
+                "32bb58fd.d26948",
+                "8dc90c81.8b1c3",
+                "1f225d2d.3c2f53"
+            ]
+        ]
+    },
+    {
+        "id": "dbe3c1b2.a085e",
+        "type": "ui_chart",
+        "z": "85a05cda.a32ed",
+        "name": "",
+        "group": "1bd60359.b904bd",
+        "order": 2,
+        "width": "8",
+        "height": "3",
+        "label": "TUF",
+        "chartType": "line",
+        "legend": "false",
+        "xformat": "Y-M-D",
+        "interpolate": "linear",
+        "nodata": "",
+        "dot": false,
+        "ymin": "",
+        "ymax": "",
+        "removeOlder": 1,
+        "removeOlderPoints": "500",
+        "removeOlderUnit": "604800",
+        "cutout": 0,
+        "useOneColor": false,
+        "colors": [
+            "#1f77b4",
+            "#aec7e8",
+            "#ff7f0e",
+            "#2ca02c",
+            "#98df8a",
+            "#d62728",
+            "#ff9896",
+            "#9467bd",
+            "#c5b0d5"
+        ],
+        "useOldStyle": false,
+        "x": 550,
+        "y": 160,
+        "wires": [
+            [],
+            []
+        ]
+    },
+    {
+        "id": "1fff1f1d.73c681",
+        "type": "change",
+        "z": "da1fb570.2fb978",
+        "name": "mean",
+        "rules": [
+            {
+                "t": "set",
+                "p": "topic",
+                "pt": "msg",
+                "to": "Mean",
+                "tot": "str"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 170,
+        "y": 280,
+        "wires": [
+            [
+                "3d8e19de.e0c446"
+            ]
+        ]
+    },
+    {
+        "id": "cd85f501.162d08",
+        "type": "link in",
+        "z": "85a05cda.a32ed",
+        "name": "",
+        "links": [
+            "7edee51d.31b6cc"
+        ],
+        "x": 295,
+        "y": 40,
+        "wires": [
+            [
+                "4eb3d773.599d78"
+            ]
+        ]
+    },
+    {
+        "id": "4eb3d773.599d78",
+        "type": "change",
+        "z": "85a05cda.a32ed",
+        "name": "reset chart",
+        "rules": [
+            {
+                "t": "set",
+                "p": "payload",
+                "pt": "msg",
+                "to": "[]",
+                "tot": "json"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 450,
+        "y": 40,
+        "wires": [
+            [
+                "dbe3c1b2.a085e"
+            ]
+        ]
+    },
+    {
+        "id": "32bb58fd.d26948",
+        "type": "debug",
+        "z": "85a05cda.a32ed",
+        "name": "",
+        "active": false,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "true",
+        "x": 560,
+        "y": 260,
+        "wires": []
+    },
+    {
+        "id": "ee7cb39b.d8355",
+        "type": "function",
+        "z": "f87f73ed.ba341",
+        "name": "set catalog",
+        "func": "msg.payload = context.global.catalog + '/pic';\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "x": 150,
+        "y": 160,
+        "wires": [
+            [
+                "d53fd991.40e5b8"
+            ]
+        ]
+    },
+    {
+        "id": "5e5d1d0a.c15954",
+        "type": "inject",
+        "z": "f87f73ed.ba341",
+        "name": "",
+        "topic": "",
+        "payload": "",
+        "payloadType": "date",
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "x": 100,
+        "y": 400,
+        "wires": [
+            [
+                "ee7cb39b.d8355"
+            ]
+        ]
+    },
+    {
+        "id": "f228e4.8c82d72",
+        "type": "debug",
+        "z": "da1fb570.2fb978",
+        "name": "",
+        "active": false,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "true",
+        "x": 500,
+        "y": 60,
+        "wires": []
+    },
+    {
+        "id": "204593a0.c6d0ac",
+        "type": "ui_text",
+        "z": "85a05cda.a32ed",
+        "group": "1bd60359.b904bd",
+        "order": 4,
+        "width": 0,
+        "height": 0,
+        "name": "",
+        "label": "Forecast",
+        "format": "{{msg.payload|date:'short'}}",
+        "layout": "row-spread",
+        "x": 500,
+        "y": 400,
+        "wires": []
+    },
+    {
+        "id": "263fb80a.1f2298",
+        "type": "function",
+        "z": "85a05cda.a32ed",
+        "name": "forecast",
+        "func": "const target = 1;\nmsg.payload =(target - msg.payload.equation[1])/msg.payload.equation[0];\nmsg.topic = 'forecast';\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "x": 290,
+        "y": 400,
+        "wires": [
+            [
+                "204593a0.c6d0ac"
+            ]
+        ]
+    },
+    {
+        "id": "8dc90c81.8b1c3",
+        "type": "ui_text",
+        "z": "85a05cda.a32ed",
+        "group": "1bd60359.b904bd",
+        "order": 3,
+        "width": 0,
+        "height": 0,
+        "name": "",
+        "label": "Sample Date",
+        "format": "{{msg.timestamp|date:'short'}}",
+        "layout": "row-spread",
+        "x": 510,
+        "y": 340,
+        "wires": []
+    },
+    {
+        "id": "1f225d2d.3c2f53",
+        "type": "function",
+        "z": "85a05cda.a32ed",
+        "name": "gradient",
+        "func": "msg.payload = msg.payload.equation[0];\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "x": 390,
+        "y": 220,
+        "wires": [
+            [
+                "dbe3c1b2.a085e",
+                "6d3e5138.5bbdd"
+            ]
+        ]
+    },
+    {
+        "id": "6d3e5138.5bbdd",
+        "type": "ui_text",
+        "z": "85a05cda.a32ed",
+        "group": "ff0e54a0.6e8fa8",
+        "order": 0,
+        "width": 0,
+        "height": 0,
+        "name": "",
+        "label": "gradient",
+        "format": "{{msg.payload}}",
+        "layout": "row-spread",
+        "x": 540,
+        "y": 300,
+        "wires": []
     }
 ]

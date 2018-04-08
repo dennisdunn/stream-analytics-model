@@ -96,7 +96,7 @@ module.exports = {
     // following property can be used to identify a directory of static content
     // that should be served at http://localhost:1880/.
     //httpStatic: '/home/nol/node-red-static/',
-    httpStatic: 'c:/users/dennis/Documents/StirTrek-2018/stream-analytics-model/static/',
+    httpStatic: 'c:/users/dennis/Documents/StirTrek-2018/stream-analytics-model/',
 
     // The maximum size of HTTP request that will be accepted by the runtime api.
     // Default: 5mb
@@ -204,12 +204,15 @@ module.exports = {
         // jfive:require("johnny-five"),
         // j5board:require("johnny-five").Board({repl:false})
         // normaljs: require('normaljs')
+        catalog: 'catalogs/B',
+        path: require('path')
     },
 
     // The following property can be used to order the categories in the editor
     // palette. If a node's category is not in the list, the category will get
     // added to the end of the palette.
     // If not set, the following default order is used:
+
     paletteCategories: ['streams', 'input', 'output', 'function', 'smooth', 'dashboard', 'social', 'mobile', 'storage', 'analysis', 'advanced'],
 
     // Configure the logging output

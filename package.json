@@ -9,18 +9,19 @@
   },
   "node-red": {
     "nodes": {
-      "threshold": "threshold.js",
+      "differencing": "differencing.js",
       "indexer": "indexer.js",
-      "median": "median.js",
-      "mean": "mean.js",
-      "window": "window.js",
-      "chartable": "chartable.js"
+      "regression": "regression.js",
+      "threshold": "threshold.js",
+      "utilization": "utilization.js",
+      "window": "window.js"
     }
   },
   "author": "Dennis Dunn <ansofive@gmail.com>",
   "license": "MIT",
   "dependencies": {
     "node-red-node-smooth": "^0.1.0",
-    "npm": "^5.8.0"
+    "npm": "^5.8.0",
+    "regression": "^2.0.1"
   }
 }

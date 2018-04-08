@@ -4,7 +4,10 @@
         color: '#C7E9C0',
         defaults: {
             name: { value: "" },
-            size: { value: 3, validate: RED.validators.number() }
+            size: { value: 3, validate: RED.validators.number() },
+            rolling: {
+                value: false
+            }
         },
         inputs: 1,
         outputs: 1,
@@ -24,8 +27,15 @@
         <label for="node-input-size"><i class="icon-tag"></i>Size</label>
         <input type="number" id="node-input-size" placeholder="Size">
     </div>
+    <div class="form-row">
+        <label for="node-input-rolling"><i class="icon-tag"></i>Rolling?</label>
+        <input type="checkbox" id="node-input-rolling" placeholder="Rolling?">
+    </div>
 </script>
 
 <script type="text/x-red" data-help-name="window">
-    <p>Collect n payloads into an array, order of the messages is maintained.</p>
+    <p>Collect n payloads into an array, order of the messages is maintained.
+        If rolling is true then new messages replace old messages, otherwise 
+        clear the buffer when sending the window.
+    </p>
 </script>
