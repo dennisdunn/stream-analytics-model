@@ -204,7 +204,7 @@ module.exports = {
         // jfive:require("johnny-five"),
         // j5board:require("johnny-five").Board({repl:false})
         // normaljs: require('normaljs')
-        catalog: 'catalogs/B',
+        catalogDir: 'catalogs',
         path: require('path'),
         moment: require('moment')
     },
