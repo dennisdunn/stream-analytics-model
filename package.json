@@ -20,6 +20,7 @@
   "author": "Dennis Dunn <ansofive@gmail.com>",
   "license": "MIT",
   "dependencies": {
+    "moment": "^2.22.0",
     "node-red-node-smooth": "^0.1.0",
     "npm": "^5.8.0",
     "regression": "^2.0.1"

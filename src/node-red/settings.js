@@ -205,7 +205,8 @@ module.exports = {
         // j5board:require("johnny-five").Board({repl:false})
         // normaljs: require('normaljs')
         catalog: 'catalogs/B',
-        path: require('path')
+        path: require('path'),
+        moment: require('moment')
     },
 
     // The following property can be used to order the categories in the editor
