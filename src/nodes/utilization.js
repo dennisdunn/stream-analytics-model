@@ -6,6 +6,7 @@ module.exports = function (RED) {
         var node = this;
         node.on('input', msg => {
             var context = node.context();
+            if (msg.reset) context.set('state', undefined);
             var state = context.get('state') || { prev: null, total: 1, on: 0, ishigh: false };
 
             if (state.prev) {
