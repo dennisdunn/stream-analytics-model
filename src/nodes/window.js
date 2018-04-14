@@ -14,7 +14,11 @@ module.exports = function (RED) {
                     payload: state.concat(),
                     timestamp: msg.timestamp
                 });
-                state = undefined;
+                if (node.rolling) {
+                    state.shift();
+                } else {
+                    state = undefined;
+                }
             }
             context.set('state', state);
         });

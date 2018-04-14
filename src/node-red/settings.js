@@ -206,7 +206,8 @@ module.exports = {
         // normaljs: require('normaljs')
         catalogDir: 'catalogs',
         path: require('path'),
-        moment: require('moment')
+        moment: require('moment'),
+        regression: require('regression')
     },
 
     // The following property can be used to order the categories in the editor

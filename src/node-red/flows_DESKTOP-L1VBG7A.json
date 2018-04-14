@@ -107,7 +107,7 @@
             }
         },
         "site": {
-            "name": "Pump Monitor",
+            "name": "Design Like Mythbusters",
             "hideToolbar": "true",
             "allowSwipe": "false",
             "dateFormat": "DD/MM/YYYY",
@@ -173,8 +173,8 @@
             "c875de8c.bb91b",
             "eda3d4d4.ae6e28"
         ],
-        "x": 475,
-        "y": 300,
+        "x": 535,
+        "y": 260,
         "wires": []
     },
     {
@@ -212,8 +212,8 @@
         "dot": false,
         "ymin": "0",
         "ymax": "1",
-        "removeOlder": "1",
-        "removeOlderPoints": "500",
+        "removeOlder": "4",
+        "removeOlderPoints": "1000",
         "removeOlderUnit": "604800",
         "cutout": 0,
         "useOneColor": false,
@@ -341,8 +341,8 @@
         "dot": false,
         "ymin": "0",
         "ymax": "1",
-        "removeOlder": "1",
-        "removeOlderPoints": "500",
+        "removeOlder": "4",
+        "removeOlderPoints": "1000",
         "removeOlderUnit": "604800",
         "cutout": 0,
         "useOneColor": false,
@@ -376,7 +376,7 @@
         "round": "",
         "mult": "single",
         "x": 280,
-        "y": 60,
+        "y": 40,
         "wires": [
             [
                 "d50514e7.2fa428"
@@ -443,7 +443,7 @@
         "id": "c875de8c.bb91b",
         "type": "link in",
         "z": "af482ebc.20131",
-        "name": "",
+        "name": "on data",
         "links": [
             "40db0525.ebc17c"
         ],
@@ -640,7 +640,7 @@
         "type": "window",
         "z": "85a05cda.a32ed",
         "name": "",
-        "size": "3",
+        "size": "5",
         "rolling": false,
         "x": 340,
         "y": 60,
@@ -912,7 +912,7 @@
         "id": "ba6fe7bb.b56a28",
         "type": "link in",
         "z": "85a05cda.a32ed",
-        "name": "",
+        "name": "on reset",
         "links": [
             "c3e8bb76.b7b158"
         ],
@@ -1022,6 +1022,22 @@
         "wires": [
             [
                 "9ab4c376.0ddd2"
+            ]
+        ]
+    },
+    {
+        "id": "7312d76e.e58498",
+        "type": "function",
+        "z": "2f26069e.9e18ea",
+        "name": "",
+        "func": "\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "x": 290,
+        "y": 400,
+        "wires": [
+            [
+                "40db0525.ebc17c"
             ]
         ]
     }
