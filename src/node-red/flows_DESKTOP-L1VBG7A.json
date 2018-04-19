@@ -173,8 +173,8 @@
             "c875de8c.bb91b",
             "eda3d4d4.ae6e28"
         ],
-        "x": 535,
-        "y": 260,
+        "x": 515,
+        "y": 300,
         "wires": []
     },
     {
@@ -186,7 +186,7 @@
             "40db0525.ebc17c"
         ],
         "x": 155,
-        "y": 160,
+        "y": 240,
         "wires": [
             [
                 "5a64984b.f910d8",
@@ -230,7 +230,7 @@
         ],
         "useOldStyle": false,
         "x": 590,
-        "y": 100,
+        "y": 180,
         "wires": [
             [],
             []
@@ -255,8 +255,8 @@
         "from": "",
         "to": "",
         "reg": false,
-        "x": 300,
-        "y": 300,
+        "x": 280,
+        "y": 340,
         "wires": [
             [
                 "40db0525.ebc17c"
@@ -271,8 +271,8 @@
         "links": [
             "734756ea.432ee8"
         ],
-        "x": 155,
-        "y": 60,
+        "x": 135,
+        "y": 100,
         "wires": [
             [
                 "459e8577.1e454c"
@@ -288,7 +288,7 @@
             "c3e8bb76.b7b158"
         ],
         "x": 155,
-        "y": 60,
+        "y": 140,
         "wires": [
             [
                 "c85e9ab8.529328"
@@ -314,8 +314,8 @@
         "from": "",
         "to": "",
         "reg": false,
-        "x": 310,
-        "y": 60,
+        "x": 290,
+        "y": 140,
         "wires": [
             [
                 "5a64984b.f910d8",
@@ -359,7 +359,7 @@
         ],
         "useOldStyle": false,
         "x": 580,
-        "y": 220,
+        "y": 300,
         "wires": [
             [],
             []
@@ -375,8 +375,8 @@
         "count": "10",
         "round": "",
         "mult": "single",
-        "x": 280,
-        "y": 40,
+        "x": 300,
+        "y": 120,
         "wires": [
             [
                 "d50514e7.2fa428"
@@ -389,8 +389,8 @@
         "z": "af482ebc.20131",
         "name": "",
         "threshold": "0.1",
-        "x": 480,
-        "y": 60,
+        "x": 500,
+        "y": 140,
         "wires": [
             [
                 "fd92220d.2d92d"
@@ -405,8 +405,8 @@
         "func": "msg.payload *=100;\nreturn msg;",
         "outputs": 1,
         "noerr": 0,
-        "x": 170,
-        "y": 240,
+        "x": 190,
+        "y": 320,
         "wires": [
             [
                 "b0133814.10b318"
@@ -435,8 +435,8 @@
         ],
         "seg1": "",
         "seg2": "",
-        "x": 500,
-        "y": 240,
+        "x": 520,
+        "y": 320,
         "wires": []
     },
     {
@@ -447,8 +447,8 @@
         "links": [
             "40db0525.ebc17c"
         ],
-        "x": 135,
-        "y": 60,
+        "x": 155,
+        "y": 140,
         "wires": [
             [
                 "a5c52791.f073d8"
@@ -466,7 +466,7 @@
         "round": "",
         "mult": "single",
         "x": 320,
-        "y": 220,
+        "y": 300,
         "wires": [
             [
                 "8c50ce.b0961f3"
@@ -485,7 +485,7 @@
         "oldrc": false,
         "name": "list the data sets",
         "x": 140,
-        "y": 180,
+        "y": 200,
         "wires": [
             [
                 "53e224c.4ad7adc"
@@ -506,7 +506,7 @@
         "stream": false,
         "addname": "",
         "x": 330,
-        "y": 180,
+        "y": 200,
         "wires": [
             [
                 "6aa36239.4ba67c"
@@ -522,7 +522,7 @@
         "outputs": 1,
         "noerr": 0,
         "x": 520,
-        "y": 180,
+        "y": 200,
         "wires": [
             [
                 "b348c9c4.c114e8"
@@ -538,12 +538,12 @@
         "order": 2,
         "width": 0,
         "height": 0,
-        "format": "<div style='height:80vh; overflow:scroll;overflow-x: hidden;'>\n    <ul ng-repeat='item in msg.payload' id='imagelist' style='list-style-type: none;list-style-position: inside;padding-left:0;'>\n        <li>\n            <md-button ng-click=\"send({payload:item})\" style=\"padding-top:0.5rem;padding-bottom:0.5rem;\">\n                <img ng-src=\"{{item}}\" style=\"width:95%;height:95%;\" />\n            </md-button>\n        </li>\n    </ul>\n</div>",
+        "format": "<div style='height:80vh; overflow:scroll;overflow-x: hidden;'>\n    <ul ng-repeat='item in msg.payload' id='imagelist' style='list-style-type: none;list-style-position: inside;padding-left:0;'>\n        <li>\n            <mat-button ng-click=\"send({payload:item})\" style=\"padding-top:0.5rem;padding-bottom:0.5rem;\">\n                <img ng-src=\"{{item}}\" style=\"width:95%;height:95%;\" />\n            </mat-button>\n        </li>\n    </ul>\n</div>",
         "storeOutMessages": false,
         "fwdInMessages": false,
         "templateScope": "local",
         "x": 310,
-        "y": 280,
+        "y": 300,
         "wires": [
             [
                 "427f81a2.4b016",
@@ -560,7 +560,7 @@
             "c147c8ce.a8dc08"
         ],
         "x": 475,
-        "y": 460,
+        "y": 480,
         "wires": []
     },
     {
@@ -579,7 +579,7 @@
         "timeout": "1",
         "count": "",
         "x": 110,
-        "y": 280,
+        "y": 300,
         "wires": [
             [
                 "ebba2f76.1137"
@@ -595,8 +595,8 @@
         "format": "lines",
         "chunk": false,
         "sendError": false,
-        "x": 310,
-        "y": 60,
+        "x": 290,
+        "y": 100,
         "wires": [
             [
                 "a14b24a5.699418"
@@ -611,8 +611,8 @@
         "func": "// ignore comments\nif(msg.payload.startsWith('#')) return null;\n\nvar t = flow.get('timestamp')||0;\n\ndelete msg.filename;\nmsg.topic='timeseries';\nmsg.payload = +msg.payload;\nmsg.timestamp = t;\n\n// 1 hr\nt += 3.6e6;\nflow.set('timestamp', t);\n\nreturn msg;",
         "outputs": 1,
         "noerr": 0,
-        "x": 530,
-        "y": 60,
+        "x": 510,
+        "y": 100,
         "wires": [
             [
                 "420facab.34ecc4"
@@ -628,7 +628,7 @@
             "40db0525.ebc17c"
         ],
         "x": 175,
-        "y": 60,
+        "y": 100,
         "wires": [
             [
                 "8e6ab914.dd7d28"
@@ -643,7 +643,7 @@
         "size": "5",
         "rolling": false,
         "x": 340,
-        "y": 60,
+        "y": 100,
         "wires": [
             [
                 "6a2235b6.9a47ec"
@@ -656,7 +656,7 @@
         "z": "85a05cda.a32ed",
         "name": "",
         "x": 530,
-        "y": 60,
+        "y": 100,
         "wires": [
             [
                 "263fb80a.1f2298"
@@ -672,7 +672,7 @@
         "outputs": 1,
         "noerr": 0,
         "x": 550,
-        "y": 40,
+        "y": 60,
         "wires": [
             [
                 "d53fd991.40e5b8"
@@ -692,7 +692,7 @@
         "format": "{{msg.payload|date:'short'}}",
         "layout": "col-center",
         "x": 570,
-        "y": 420,
+        "y": 460,
         "wires": []
     },
     {
@@ -704,7 +704,7 @@
         "outputs": 2,
         "noerr": 0,
         "x": 160,
-        "y": 180,
+        "y": 220,
         "wires": [
             [
                 "11555de5.e87242"
@@ -737,7 +737,7 @@
         "seg1": "",
         "seg2": "",
         "x": 590,
-        "y": 120,
+        "y": 160,
         "wires": []
     },
     {
@@ -767,7 +767,7 @@
         "payload": "",
         "topic": "selected-catalog",
         "x": 320,
-        "y": 40,
+        "y": 60,
         "wires": [
             [
                 "ee7cb39b.d8355"
@@ -783,7 +783,7 @@
         "outputs": 1,
         "noerr": 0,
         "x": 530,
-        "y": 360,
+        "y": 380,
         "wires": [
             [
                 "734756ea.432ee8"
@@ -803,7 +803,7 @@
         "once": true,
         "onceDelay": 0.1,
         "x": 90,
-        "y": 40,
+        "y": 60,
         "wires": [
             [
                 "f4fce7b1.fc3d18"
@@ -821,7 +821,7 @@
             "ba6fe7bb.b56a28"
         ],
         "x": 255,
-        "y": 400,
+        "y": 420,
         "wires": []
     },
     {
@@ -858,7 +858,7 @@
         "to": "",
         "reg": false,
         "x": 150,
-        "y": 400,
+        "y": 420,
         "wires": [
             [
                 "c3e8bb76.b7b158"
@@ -873,8 +873,8 @@
         "links": [
             "c3e8bb76.b7b158"
         ],
-        "x": 135,
-        "y": 120,
+        "x": 155,
+        "y": 200,
         "wires": [
             [
                 "72c35909.79f738"
@@ -900,8 +900,8 @@
         "from": "",
         "to": "",
         "reg": false,
-        "x": 290,
-        "y": 120,
+        "x": 310,
+        "y": 200,
         "wires": [
             [
                 "d50514e7.2fa428"
@@ -917,7 +917,7 @@
             "c3e8bb76.b7b158"
         ],
         "x": 415,
-        "y": 200,
+        "y": 240,
         "wires": [
             [
                 "4bd6212e.19ba4",
@@ -945,7 +945,7 @@
         "to": "",
         "reg": false,
         "x": 550,
-        "y": 220,
+        "y": 260,
         "wires": [
             [
                 "11555de5.e87242"
@@ -972,7 +972,7 @@
         "to": "",
         "reg": false,
         "x": 550,
-        "y": 300,
+        "y": 340,
         "wires": [
             [
                 "204593a0.c6d0ac"
@@ -994,8 +994,8 @@
         "randomLast": "5",
         "randomUnits": "seconds",
         "drop": false,
-        "x": 310,
-        "y": 180,
+        "x": 290,
+        "y": 220,
         "wires": [
             [
                 "68398a57.de3c14"
@@ -1018,26 +1018,10 @@
         "randomUnits": "seconds",
         "drop": false,
         "x": 540,
-        "y": 280,
+        "y": 300,
         "wires": [
             [
                 "9ab4c376.0ddd2"
-            ]
-        ]
-    },
-    {
-        "id": "7312d76e.e58498",
-        "type": "function",
-        "z": "2f26069e.9e18ea",
-        "name": "",
-        "func": "\nreturn msg;",
-        "outputs": 1,
-        "noerr": 0,
-        "x": 290,
-        "y": 400,
-        "wires": [
-            [
-                "40db0525.ebc17c"
             ]
         ]
     }
