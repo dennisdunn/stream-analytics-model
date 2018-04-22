@@ -1,7 +1,7 @@
 module.exports = function (RED) {
     function Regression(config) {
         RED.nodes.createNode(this, config);
-        this.size = config.size;
+        this.cfg = config;
         let node = this;
         node.on('input', msg => {
             var regression = node.context().global.regression;
@@ -20,3 +20,5 @@ module.exports = function (RED) {
     }
     RED.nodes.registerType('regression', Regression);
 }
+
+

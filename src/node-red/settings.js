@@ -191,19 +191,12 @@ module.exports = {
     //    //   - reason: if result is false, the HTTP reason string to return
     //},
 
-    // Anything in this hash is globally available to all functions.
-    // It is accessed as context.global.
-    // eg:
-    //    functionGlobalContext: { os:require('os') }
+    // Anything in this hash is globally 
+    // available to all functions. It 
     // can be accessed in a function block as:
     //    context.global.os
 
     functionGlobalContext: {
-        // os:require('os'),
-        // octalbonescript:require('octalbonescript'),
-        // jfive:require("johnny-five"),
-        // j5board:require("johnny-five").Board({repl:false})
-        // normaljs: require('normaljs')
         catalogDir: 'catalogs',
         path: require('path'),
         moment: require('moment'),
