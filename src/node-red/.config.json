@@ -739,7 +739,8 @@
      "view-snap-grid": true,
      "view-show-grid": true
     }
-   }
+   },
+   "menu-menu-item-sidebar": true
   }
  }
 }

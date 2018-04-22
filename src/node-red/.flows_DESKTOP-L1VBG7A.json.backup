@@ -255,8 +255,8 @@
         "from": "",
         "to": "",
         "reg": false,
-        "x": 280,
-        "y": 340,
+        "x": 320,
+        "y": 320,
         "wires": [
             [
                 "40db0525.ebc17c"
@@ -291,6 +291,7 @@
         "y": 140,
         "wires": [
             [
+                "34ff438a.c3c81c",
                 "79d72041.cda49"
             ]
         ]
@@ -338,24 +339,6 @@
         ]
     },
     {
-        "id": "a5c52791.f073d8",
-        "type": "smooth",
-        "z": "af482ebc.20131",
-        "name": "lo pass",
-        "property": "payload",
-        "action": "low",
-        "count": "10",
-        "round": "",
-        "mult": "single",
-        "x": 300,
-        "y": 80,
-        "wires": [
-            [
-                "d50514e7.2fa428"
-            ]
-        ]
-    },
-    {
         "id": "d50514e7.2fa428",
         "type": "utilization",
         "z": "af482ebc.20131",
@@ -365,8 +348,7 @@
         "y": 120,
         "wires": [
             [
-                "fd92220d.2d92d",
-                "652bd947.e744f8"
+                "fd92220d.2d92d"
             ]
         ]
     },
@@ -424,7 +406,7 @@
         "y": 80,
         "wires": [
             [
-                "a5c52791.f073d8"
+                "d50514e7.2fa428"
             ]
         ]
     },
@@ -844,8 +826,7 @@
         "wires": [
             [
                 "d50514e7.2fa428",
-                "b0133814.10b318",
-                "a5c52791.f073d8"
+                "b0133814.10b318"
             ]
         ]
     },
@@ -857,8 +838,8 @@
         "links": [
             "c3e8bb76.b7b158"
         ],
-        "x": 515,
-        "y": 360,
+        "x": 495,
+        "y": 340,
         "wires": [
             [
                 "11555de5.e87242",
@@ -872,17 +853,17 @@
         "z": "2f26069e.9e18ea",
         "name": "",
         "pauseType": "rate",
-        "timeout": ".1",
+        "timeout": "0.1",
         "timeoutUnits": "seconds",
-        "rate": "1",
-        "nbRateUnits": ".1",
+        "rate": "10",
+        "nbRateUnits": "1",
         "rateUnits": "second",
         "randomFirst": "1",
         "randomLast": "5",
         "randomUnits": "seconds",
         "drop": false,
-        "x": 290,
-        "y": 220,
+        "x": 300,
+        "y": 240,
         "wires": [
             [
                 "68398a57.de3c14"
@@ -938,8 +919,8 @@
         "links": [
             "c3e8bb76.b7b158"
         ],
-        "x": 120,
-        "y": 280,
+        "x": 115,
+        "y": 180,
         "wires": [
             [
                 "420facab.34ecc4"
@@ -988,19 +969,5 @@
                 "8c50ce.b0961f3"
             ]
         ]
-    },
-    {
-        "id": "652bd947.e744f8",
-        "type": "debug",
-        "z": "af482ebc.20131",
-        "name": "",
-        "active": true,
-        "tosidebar": true,
-        "console": false,
-        "tostatus": false,
-        "complete": "false",
-        "x": 630,
-        "y": 220,
-        "wires": []
     }
 ]
