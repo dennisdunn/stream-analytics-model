@@ -647,7 +647,8 @@
         "y": 322,
         "wires": [
             [
-                "11555de5.e87242"
+                "11555de5.e87242",
+                "9a31e871.043a58"
             ],
             [
                 "204593a0.c6d0ac"
@@ -677,7 +678,7 @@
         "seg1": "",
         "seg2": "",
         "x": 630,
-        "y": 222,
+        "y": 340,
         "wires": []
     },
     {
@@ -839,7 +840,7 @@
             "c3e8bb76.b7b158"
         ],
         "x": 495,
-        "y": 340,
+        "y": 400,
         "wires": [
             [
                 "11555de5.e87242",
@@ -968,6 +969,37 @@
                 "5a64984b.f910d8",
                 "8c50ce.b0961f3"
             ]
+        ]
+    },
+    {
+        "id": "9a31e871.043a58",
+        "type": "function",
+        "z": "85a05cda.a32ed",
+        "name": "",
+        "func": "if(msg.payload > 2)return null;\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "x": 440,
+        "y": 280,
+        "wires": [
+            [
+                "ec4b1225.2aa4f"
+            ]
+        ]
+    },
+    {
+        "id": "ec4b1225.2aa4f",
+        "type": "http request",
+        "z": "85a05cda.a32ed",
+        "name": "",
+        "method": "GET",
+        "ret": "obj",
+        "url": "http://192.168.0.21:1880/api/pattern/cops",
+        "tls": "",
+        "x": 600,
+        "y": 220,
+        "wires": [
+            []
         ]
     }
 ]
