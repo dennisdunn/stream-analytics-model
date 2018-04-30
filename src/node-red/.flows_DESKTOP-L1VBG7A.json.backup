@@ -439,8 +439,8 @@
         "timer": "",
         "oldrc": false,
         "name": "list the data sets",
-        "x": 140,
-        "y": 200,
+        "x": 180,
+        "y": 320,
         "wires": [
             [
                 "53e224c.4ad7adc"
@@ -460,8 +460,8 @@
         "arraySpltType": "len",
         "stream": false,
         "addname": "",
-        "x": 330,
-        "y": 200,
+        "x": 370,
+        "y": 320,
         "wires": [
             [
                 "6aa36239.4ba67c"
@@ -476,8 +476,8 @@
         "func": "if(msg.payload === \"\") return null;\n\nvar catalog = flow.get('catalog');\nmsg.payload =  '../' + catalog + '/pic/' + msg.payload;\nreturn msg;",
         "outputs": 1,
         "noerr": 0,
-        "x": 520,
-        "y": 200,
+        "x": 560,
+        "y": 320,
         "wires": [
             [
                 "b348c9c4.c114e8"
@@ -497,8 +497,8 @@
         "storeOutMessages": false,
         "fwdInMessages": false,
         "templateScope": "local",
-        "x": 310,
-        "y": 300,
+        "x": 350,
+        "y": 420,
         "wires": [
             [
                 "427f81a2.4b016",
@@ -514,8 +514,8 @@
         "links": [
             "c147c8ce.a8dc08"
         ],
-        "x": 475,
-        "y": 480,
+        "x": 515,
+        "y": 600,
         "wires": []
     },
     {
@@ -533,8 +533,8 @@
         "accumulate": false,
         "timeout": "1",
         "count": "",
-        "x": 110,
-        "y": 300,
+        "x": 150,
+        "y": 420,
         "wires": [
             [
                 "ebba2f76.1137"
@@ -595,8 +595,8 @@
         "type": "regression",
         "z": "85a05cda.a32ed",
         "name": "",
-        "x": 510,
-        "y": 122,
+        "x": 610,
+        "y": 100,
         "wires": [
             [
                 "263fb80a.1f2298"
@@ -611,8 +611,8 @@
         "func": "var catalog = context.global.catalogDir + '/' + msg.payload;\nflow.set('catalog',catalog);\n\nmsg.payload = catalog + '/pic';\nreturn msg;",
         "outputs": 1,
         "noerr": 0,
-        "x": 550,
-        "y": 60,
+        "x": 590,
+        "y": 180,
         "wires": [
             [
                 "d53fd991.40e5b8"
@@ -643,12 +643,12 @@
         "func": "const target = .75;\n\nvar m = context.global.moment;\nvar now = m(msg.timestamp);\nvar forecast = m((target - msg.payload.equation[1])/msg.payload.equation[0]);\nvar delta = m.duration(forecast.diff(now)).asDays();\n\ndelta = Math.floor(delta);\n\nif(delta < 0)return null;\n\nmsg.payload = +forecast;\nmsg.topic = 'forecast';\nreturn [{timestamp:msg.timestamp, payload:delta},msg];",
         "outputs": 2,
         "noerr": 0,
-        "x": 280,
-        "y": 322,
+        "x": 380,
+        "y": 360,
         "wires": [
             [
                 "11555de5.e87242",
-                "9a31e871.043a58"
+                "3609c2b.444853e"
             ],
             [
                 "204593a0.c6d0ac"
@@ -707,8 +707,8 @@
         ],
         "payload": "",
         "topic": "selected-catalog",
-        "x": 320,
-        "y": 60,
+        "x": 360,
+        "y": 180,
         "wires": [
             [
                 "ee7cb39b.d8355"
@@ -723,8 +723,8 @@
         "func": "var catalog = flow.get('catalog');\nvar path = context.global.path;\nvar info = path.parse(msg.payload);\nmsg.filename = catalog + '/dat/' + info.name + '.csv';\nreturn msg;\n",
         "outputs": 1,
         "noerr": 0,
-        "x": 530,
-        "y": 380,
+        "x": 570,
+        "y": 500,
         "wires": [
             [
                 "734756ea.432ee8"
@@ -743,11 +743,12 @@
         "crontab": "",
         "once": true,
         "onceDelay": 0.1,
-        "x": 90,
-        "y": 60,
+        "x": 130,
+        "y": 180,
         "wires": [
             [
-                "f4fce7b1.fc3d18"
+                "f4fce7b1.fc3d18",
+                "4f545f3b.dc06d"
             ]
         ]
     },
@@ -762,8 +763,8 @@
             "ba6fe7bb.b56a28",
             "2002b6d0.9e109a"
         ],
-        "x": 255,
-        "y": 420,
+        "x": 295,
+        "y": 540,
         "wires": []
     },
     {
@@ -806,8 +807,8 @@
         "from": "",
         "to": "",
         "reg": false,
-        "x": 150,
-        "y": 420,
+        "x": 190,
+        "y": 540,
         "wires": [
             [
                 "c3e8bb76.b7b158"
@@ -886,8 +887,8 @@
         "randomLast": "5",
         "randomUnits": "seconds",
         "drop": false,
-        "x": 540,
-        "y": 300,
+        "x": 580,
+        "y": 420,
         "wires": [
             [
                 "9ab4c376.0ddd2"
@@ -905,10 +906,11 @@
         "round": "",
         "mult": "single",
         "x": 180,
-        "y": 122,
+        "y": 80,
         "wires": [
             [
-                "1ba8fc65.9c0b44"
+                "ce0d792e.4ebb38",
+                "3798f799.8389e8"
             ]
         ]
     },
@@ -925,21 +927,6 @@
         "wires": [
             [
                 "420facab.34ecc4"
-            ]
-        ]
-    },
-    {
-        "id": "1ba8fc65.9c0b44",
-        "type": "window",
-        "z": "85a05cda.a32ed",
-        "name": "",
-        "size": "5",
-        "rolling": true,
-        "x": 340,
-        "y": 60,
-        "wires": [
-            [
-                "6a2235b6.9a47ec"
             ]
         ]
     },
@@ -972,34 +959,95 @@
         ]
     },
     {
-        "id": "9a31e871.043a58",
-        "type": "function",
+        "id": "3609c2b.444853e",
+        "type": "link out",
+        "z": "85a05cda.a32ed",
+        "name": "tuf forecast",
+        "links": [
+            "e137b4cd.cda178",
+            "239fe5bc.36ff8a",
+            "43294414.22de7c"
+        ],
+        "x": 595,
+        "y": 260,
+        "wires": []
+    },
+    {
+        "id": "ce0d792e.4ebb38",
+        "type": "batch",
         "z": "85a05cda.a32ed",
         "name": "",
-        "func": "if(msg.payload > 2)return null;\nreturn msg;",
-        "outputs": 1,
-        "noerr": 0,
-        "x": 440,
-        "y": 280,
+        "mode": "count",
+        "count": "5",
+        "overlap": 0,
+        "interval": 10,
+        "allowEmptySequence": false,
+        "topics": [],
+        "x": 270,
+        "y": 160,
         "wires": [
             [
-                "ec4b1225.2aa4f"
+                "197397a0.633f58",
+                "3798f799.8389e8"
             ]
         ]
     },
     {
-        "id": "ec4b1225.2aa4f",
-        "type": "http request",
+        "id": "197397a0.633f58",
+        "type": "join",
         "z": "85a05cda.a32ed",
         "name": "",
-        "method": "GET",
-        "ret": "obj",
-        "url": "http://192.168.0.21:1880/api/pattern/cops",
-        "tls": "",
-        "x": 600,
+        "mode": "custom",
+        "build": "array",
+        "property": "",
+        "propertyType": "full",
+        "key": "topic",
+        "joiner": "\\n",
+        "joinerType": "str",
+        "accumulate": false,
+        "timeout": "",
+        "count": "",
+        "reduceRight": false,
+        "reduceExp": "",
+        "reduceInit": "",
+        "reduceInitType": "",
+        "reduceFixup": "",
+        "x": 370,
         "y": 220,
+        "wires": [
+            [
+                "6a2235b6.9a47ec",
+                "3798f799.8389e8"
+            ]
+        ]
+    },
+    {
+        "id": "4f545f3b.dc06d",
+        "type": "http request",
+        "z": "f87f73ed.ba341",
+        "name": "",
+        "method": "GET",
+        "ret": "txt",
+        "url": "http://192.168.0.21:1880/api/reset",
+        "tls": "",
+        "x": 370,
+        "y": 80,
         "wires": [
             []
         ]
+    },
+    {
+        "id": "3798f799.8389e8",
+        "type": "debug",
+        "z": "85a05cda.a32ed",
+        "name": "",
+        "active": false,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "false",
+        "x": 900,
+        "y": 200,
+        "wires": []
     }
 ]
