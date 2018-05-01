@@ -152,7 +152,7 @@
         "tab": "5c0fb88.33d9d48",
         "order": 3,
         "disp": false,
-        "width": "7",
+        "width": "8",
         "collapse": false
     },
     {
@@ -163,7 +163,7 @@
         "tab": "5c0fb88.33d9d48",
         "order": 4,
         "disp": false,
-        "width": "5",
+        "width": "6",
         "collapse": false
     },
     {
@@ -173,16 +173,6 @@
         "name": "Data Catalog",
         "tab": "5c0fb88.33d9d48",
         "order": 1,
-        "disp": false,
-        "width": "3",
-        "collapse": false
-    },
-    {
-        "id": "dd7d25b.412dcd8",
-        "type": "ui_group",
-        "z": "",
-        "name": "Runtime",
-        "tab": "5c0fb88.33d9d48",
         "disp": false,
         "width": "4",
         "collapse": false
@@ -196,7 +186,7 @@
             "7246eee4.fabb6",
             "eda3d4d4.ae6e28"
         ],
-        "x": 515,
+        "x": 575,
         "y": 300,
         "wires": []
     },
@@ -277,8 +267,8 @@
         "from": "",
         "to": "",
         "reg": false,
-        "x": 320,
-        "y": 320,
+        "x": 420,
+        "y": 300,
         "wires": [
             [
                 "40db0525.ebc17c"
@@ -297,7 +287,8 @@
         "y": 100,
         "wires": [
             [
-                "459e8577.1e454c"
+                "459e8577.1e454c",
+                "f85f58f7.c6d578"
             ]
         ]
     },
@@ -307,7 +298,6 @@
         "z": "da1fb570.2fb978",
         "name": "on reset",
         "links": [
-            "703caaf3.f61754",
             "c3e8bb76.b7b158"
         ],
         "x": 155,
@@ -494,10 +484,10 @@
         "z": "f87f73ed.ba341",
         "group": "ff0e54a0.6e8fa8",
         "name": "catalog list",
-        "order": 2,
+        "order": 3,
         "width": 0,
         "height": 0,
-        "format": "<div style='height:80vh; overflow:scroll;overflow-x: hidden;'>\n    <ul ng-repeat='item in msg.payload' id='imagelist' style='list-style-type: none;list-style-position: inside;padding-left:0;'>\n        <li>\n            <mat-button ng-click=\"send({payload:item})\" style=\"padding-top:0.5rem;padding-bottom:0.5rem;\">\n                <img ng-src=\"{{item}}\" style=\"width:95%;height:95%;\" />\n            </mat-button>\n        </li>\n    </ul>\n</div>",
+        "format": "<div style='height:70vh; overflow:scroll;overflow-x: hidden;'>\n    <ul ng-repeat='item in msg.payload' id='imagelist' style='list-style-type: none;list-style-position: inside;padding-left:0;'>\n        <li>\n            <mat-button ng-click=\"send({payload:item})\" style=\"padding-top:0.5rem;padding-bottom:0.5rem;\">\n                <img ng-src=\"{{item}}\" style=\"width:95%;height:95%;\" />\n            </mat-button>\n        </li>\n    </ul>\n</div>",
         "storeOutMessages": false,
         "fwdInMessages": false,
         "templateScope": "local",
@@ -518,7 +508,7 @@
             "c147c8ce.a8dc08"
         ],
         "x": 515,
-        "y": 600,
+        "y": 640,
         "wires": []
     },
     {
@@ -627,7 +617,7 @@
         "type": "ui_text",
         "z": "85a05cda.a32ed",
         "group": "1bd60359.b904bd",
-        "order": 3,
+        "order": 5,
         "width": 0,
         "height": 0,
         "name": "date",
@@ -643,7 +633,7 @@
         "type": "function",
         "z": "85a05cda.a32ed",
         "name": "forecast",
-        "func": "const target = flow.get('failure_threshold');\n\nvar m = context.global.moment;\nvar now = m(msg.timestamp);\nvar forecast = m((target - msg.payload.equation[1])/msg.payload.equation[0]);\nvar delta = m.duration(forecast.diff(now)).asDays();\n\ndelta = Math.floor(delta);\n\nif(delta < 0)return null;\n\nmsg.payload = +forecast;\nmsg.topic = 'forecast';\nreturn [{timestamp:msg.timestamp, payload:delta},msg];",
+        "func": "const target = global.get('failure_threshold');\n\nvar m = context.global.moment;\nvar now = m(msg.timestamp);\nvar forecast = m((target - msg.payload.equation[1])/msg.payload.equation[0]);\nvar delta = m.duration(forecast.diff(now)).asDays();\n\ndelta = Math.floor(delta);\n\nif(delta < 0)return null;\n\nmsg.payload = +forecast;\nmsg.topic = 'forecast';\nreturn [{timestamp:msg.timestamp, payload:delta},msg];",
         "outputs": 2,
         "noerr": 0,
         "x": 200,
@@ -664,7 +654,7 @@
         "z": "85a05cda.a32ed",
         "name": "",
         "group": "1bd60359.b904bd",
-        "order": 2,
+        "order": 3,
         "width": 0,
         "height": 0,
         "gtype": "gage",
@@ -692,7 +682,7 @@
         "label": "",
         "place": "Select data",
         "group": "ff0e54a0.6e8fa8",
-        "order": 1,
+        "order": 2,
         "width": 0,
         "height": 0,
         "passthru": true,
@@ -822,8 +812,8 @@
         "randomLast": "5",
         "randomUnits": "seconds",
         "drop": false,
-        "x": 300,
-        "y": 240,
+        "x": 400,
+        "y": 220,
         "wires": [
             [
                 "68398a57.de3c14"
@@ -862,7 +852,7 @@
             "c3e8bb76.b7b158"
         ],
         "x": 135,
-        "y": 180,
+        "y": 320,
         "wires": [
             [
                 "420facab.34ecc4"
@@ -974,9 +964,9 @@
         "type": "ui_numeric",
         "z": "a8b82a4.de3ced8",
         "name": "util",
-        "label": "Utilization Threshold",
-        "group": "dd7d25b.412dcd8",
-        "order": 1,
+        "label": "Threshold",
+        "group": "1bd60359.b904bd",
+        "order": 2,
         "width": 0,
         "height": 0,
         "passthru": true,
@@ -1444,9 +1434,7 @@
         "type": "link out",
         "z": "9ceaf370.a3bfe",
         "name": "raise reset",
-        "links": [
-            "fa1a261e.568eb8"
-        ],
+        "links": [],
         "x": 555,
         "y": 440,
         "wires": []
@@ -1511,8 +1499,8 @@
         "type": "ui_button",
         "z": "f87f73ed.ba341",
         "name": "",
-        "group": "dd7d25b.412dcd8",
-        "order": 3,
+        "group": "ff0e54a0.6e8fa8",
+        "order": 1,
         "width": 0,
         "height": 0,
         "passthru": false,
@@ -1536,9 +1524,9 @@
         "type": "ui_numeric",
         "z": "a8b82a4.de3ced8",
         "name": "failure",
-        "label": "Failure Threshold",
-        "group": "dd7d25b.412dcd8",
-        "order": 2,
+        "label": "Threshold",
+        "group": "1bd60359.b904bd",
+        "order": 4,
         "width": 0,
         "height": 0,
         "passthru": true,
@@ -1580,6 +1568,33 @@
             [
                 "c3e8bb76.b7b158",
                 "27010b34.734f94"
+            ]
+        ]
+    },
+    {
+        "id": "f85f58f7.c6d578",
+        "type": "change",
+        "z": "2f26069e.9e18ea",
+        "name": "reset",
+        "rules": [
+            {
+                "t": "set",
+                "p": "reset",
+                "pt": "msg",
+                "to": "true",
+                "tot": "bool"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 170,
+        "y": 220,
+        "wires": [
+            [
+                "420facab.34ecc4"
             ]
         ]
     }
