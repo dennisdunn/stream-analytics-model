@@ -49,6 +49,13 @@
         "info": ""
     },
     {
+        "id": "195181e1.87eaae",
+        "type": "tab",
+        "label": "Flow 3",
+        "disabled": false,
+        "info": ""
+    },
+    {
         "id": "b4e37829.653658",
         "type": "ui_base",
         "theme": {
@@ -756,7 +763,8 @@
             "da6bcca7.37b89",
             "ba6fe7bb.b56a28",
             "e5702948.7ae5b8",
-            "f55f45b3.f43c78"
+            "f55f45b3.f43c78",
+            "254a834b.1e3fcc"
         ],
         "x": 355,
         "y": 640,
@@ -768,7 +776,8 @@
         "z": "af482ebc.20131",
         "name": "on reset",
         "links": [
-            "c3e8bb76.b7b158"
+            "c3e8bb76.b7b158",
+            "3c3d1668.badaba"
         ],
         "x": 155,
         "y": 220,
@@ -892,7 +901,9 @@
         "type": "link out",
         "z": "85a05cda.a32ed",
         "name": "raise forecast",
-        "links": [],
+        "links": [
+            "de6ce2ae.fe8d3"
+        ],
         "x": 595,
         "y": 140,
         "wires": []
@@ -979,7 +990,8 @@
         "y": 160,
         "wires": [
             [
-                "37676149.d9dd2e"
+                "37676149.d9dd2e",
+                "3c3d1668.badaba"
             ]
         ]
     },
@@ -1477,16 +1489,14 @@
         "x": 470,
         "y": 240,
         "wires": [
-            [
-                "2ca5742e.56b55c"
-            ]
+            []
         ]
     },
     {
         "id": "2ca5742e.56b55c",
         "type": "link out",
         "z": "a8b82a4.de3ced8",
-        "name": "raise threshold",
+        "name": "raise failue threshold",
         "links": [
             "ba6fe7bb.b56a28"
         ],
@@ -1539,7 +1549,8 @@
         "y": 320,
         "wires": [
             [
-                "37676149.d9dd2e"
+                "37676149.d9dd2e",
+                "2ca5742e.56b55c"
             ]
         ]
     },
@@ -1597,5 +1608,104 @@
                 "420facab.34ecc4"
             ]
         ]
+    },
+    {
+        "id": "de6ce2ae.fe8d3",
+        "type": "link in",
+        "z": "195181e1.87eaae",
+        "name": "",
+        "links": [
+            "3609c2b.444853e"
+        ],
+        "x": 140,
+        "y": 140,
+        "wires": [
+            [
+                "11687016.8f7d4"
+            ]
+        ]
+    },
+    {
+        "id": "1dc77fa9.be153",
+        "type": "http request",
+        "z": "195181e1.87eaae",
+        "name": "",
+        "method": "GET",
+        "ret": "txt",
+        "url": "http://192.168.0.21:1880/api/pattern/rainbow",
+        "tls": "",
+        "x": 400,
+        "y": 240,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "11687016.8f7d4",
+        "type": "switch",
+        "z": "195181e1.87eaae",
+        "name": " ",
+        "property": "payload",
+        "propertyType": "msg",
+        "rules": [
+            {
+                "t": "lte",
+                "v": "3",
+                "vt": "num"
+            }
+        ],
+        "checkall": "true",
+        "repair": false,
+        "outputs": 1,
+        "x": 300,
+        "y": 120,
+        "wires": [
+            [
+                "1dc77fa9.be153"
+            ]
+        ]
+    },
+    {
+        "id": "24c2d1f4.16df0e",
+        "type": "http request",
+        "z": "195181e1.87eaae",
+        "name": "",
+        "method": "GET",
+        "ret": "txt",
+        "url": "http://192.168.0.21:1880/api/reset",
+        "tls": "",
+        "x": 390,
+        "y": 320,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "254a834b.1e3fcc",
+        "type": "link in",
+        "z": "195181e1.87eaae",
+        "name": "ansofive@gmail.com",
+        "links": [
+            "c3e8bb76.b7b158"
+        ],
+        "x": 155,
+        "y": 320,
+        "wires": [
+            [
+                "24c2d1f4.16df0e"
+            ]
+        ]
+    },
+    {
+        "id": "3c3d1668.badaba",
+        "type": "link out",
+        "z": "a8b82a4.de3ced8",
+        "name": "raise util threshold",
+        "links": [
+            "da6bcca7.37b89"
+        ],
+        "x": 575,
+        "y": 160,
+        "wires": []
     }
 ]
