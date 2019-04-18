@@ -2,7 +2,7 @@
  "nodes": {
   "node-red": {
    "name": "node-red",
-   "version": "0.19.5",
+   "version": "0.18.4",
    "local": false,
    "nodes": {
     "sentiment": {
@@ -279,26 +279,6 @@
      "module": "node-red",
      "file": "C:\\Users\\Dennis\\AppData\\Roaming\\npm\\node_modules\\node-red\\nodes\\core\\logic\\17-split.js"
     },
-    "sort": {
-     "name": "sort",
-     "types": [
-      "sort"
-     ],
-     "enabled": true,
-     "local": false,
-     "module": "node-red",
-     "file": "C:\\Users\\Dennis\\AppData\\Roaming\\npm\\node_modules\\node-red\\nodes\\core\\logic\\18-sort.js"
-    },
-    "batch": {
-     "name": "batch",
-     "types": [
-      "batch"
-     ],
-     "enabled": true,
-     "local": false,
-     "module": "node-red",
-     "file": "C:\\Users\\Dennis\\AppData\\Roaming\\npm\\node_modules\\node-red\\nodes\\core\\logic\\19-batch.js"
-    },
     "CSV": {
      "name": "CSV",
      "types": [
@@ -370,16 +350,6 @@
      "module": "node-red",
      "file": "C:\\Users\\Dennis\\AppData\\Roaming\\npm\\node_modules\\node-red\\nodes\\core\\storage\\50-file.js"
     },
-    "differencing": {
-     "name": "differencing",
-     "types": [
-      "differencing"
-     ],
-     "enabled": true,
-     "local": false,
-     "module": "node-red",
-     "file": "c:\\users\\dennis\\Documents\\sandbox\\stream-analytics-model\\src\\nodes\\differencing.js"
-    },
     "indexer": {
      "name": "indexer",
      "types": [
@@ -388,17 +358,7 @@
      "enabled": true,
      "local": false,
      "module": "node-red",
-     "file": "c:\\users\\dennis\\Documents\\sandbox\\stream-analytics-model\\src\\nodes\\indexer.js"
-    },
-    "regression": {
-     "name": "regression",
-     "types": [
-      "regression"
-     ],
-     "enabled": true,
-     "local": false,
-     "module": "node-red",
-     "file": "c:\\users\\dennis\\Documents\\sandbox\\stream-analytics-model\\src\\nodes\\regression.js"
+     "file": "c:\\users\\dennis\\Documents\\StirTrek-2018\\stream-analytics-model\\src\\nodes\\indexer.js"
     },
     "threshold": {
      "name": "threshold",
@@ -408,17 +368,7 @@
      "enabled": true,
      "local": false,
      "module": "node-red",
-     "file": "c:\\users\\dennis\\Documents\\sandbox\\stream-analytics-model\\src\\nodes\\threshold.js"
-    },
-    "utilization": {
-     "name": "utilization",
-     "types": [
-      "utilization"
-     ],
-     "enabled": true,
-     "local": false,
-     "module": "node-red",
-     "file": "c:\\users\\dennis\\Documents\\sandbox\\stream-analytics-model\\src\\nodes\\utilization.js"
+     "file": "c:\\users\\dennis\\Documents\\StirTrek-2018\\stream-analytics-model\\src\\nodes\\threshold.js"
     },
     "window": {
      "name": "window",
@@ -428,13 +378,63 @@
      "enabled": true,
      "local": false,
      "module": "node-red",
-     "file": "c:\\users\\dennis\\Documents\\sandbox\\stream-analytics-model\\src\\nodes\\window.js"
+     "file": "c:\\users\\dennis\\Documents\\StirTrek-2018\\stream-analytics-model\\src\\nodes\\window.js"
+    },
+    "differencing": {
+     "name": "differencing",
+     "types": [
+      "differencing"
+     ],
+     "enabled": true,
+     "local": false,
+     "module": "node-red",
+     "file": "c:\\users\\dennis\\Documents\\StirTrek-2018\\stream-analytics-model\\src\\nodes\\differencing.js"
+    },
+    "utilization": {
+     "name": "utilization",
+     "types": [
+      "utilization"
+     ],
+     "enabled": true,
+     "local": false,
+     "module": "node-red",
+     "file": "c:\\users\\dennis\\Documents\\StirTrek-2018\\stream-analytics-model\\src\\nodes\\utilization.js"
+    },
+    "sort": {
+     "name": "sort",
+     "types": [
+      "sort"
+     ],
+     "enabled": true,
+     "local": false,
+     "module": "node-red",
+     "file": "C:\\Users\\Dennis\\AppData\\Roaming\\npm\\node_modules\\node-red\\nodes\\core\\logic\\18-sort.js"
+    },
+    "batch": {
+     "name": "batch",
+     "types": [
+      "batch"
+     ],
+     "enabled": true,
+     "local": false,
+     "module": "node-red",
+     "file": "C:\\Users\\Dennis\\AppData\\Roaming\\npm\\node_modules\\node-red\\nodes\\core\\logic\\19-batch.js"
+    },
+    "regression": {
+     "name": "regression",
+     "types": [
+      "regression"
+     ],
+     "enabled": true,
+     "local": false,
+     "module": "node-red",
+     "file": "c:\\users\\dennis\\Documents\\StirTrek-2018\\stream-analytics-model\\src\\nodes\\regression.js"
     }
    }
   },
   "node-red-node-email": {
    "name": "node-red-node-email",
-   "version": "0.1.29",
+   "version": "0.1.27",
    "local": false,
    "nodes": {
     "email": {
@@ -452,7 +452,7 @@
   },
   "node-red-node-feedparser": {
    "name": "node-red-node-feedparser",
-   "version": "0.1.14",
+   "version": "0.1.12",
    "local": false,
    "nodes": {
     "feedparse": {
@@ -469,7 +469,7 @@
   },
   "node-red-node-rbe": {
    "name": "node-red-node-rbe",
-   "version": "0.2.4",
+   "version": "0.2.3",
    "local": false,
    "nodes": {
     "rbe": {
@@ -486,7 +486,7 @@
   },
   "node-red-node-twitter": {
    "name": "node-red-node-twitter",
-   "version": "1.1.4",
+   "version": "0.1.13",
    "local": false,
    "nodes": {
     "twitter": {
@@ -516,7 +516,7 @@
      "enabled": true,
      "local": true,
      "module": "node-red-dashboard",
-     "file": "C:\\Users\\Dennis\\Documents\\sandbox\\stream-analytics-model\\src\\node-red\\node_modules\\node-red-dashboard\\nodes\\ui_base.js"
+     "file": "C:\\Users\\Dennis\\Documents\\StirTrek-2018\\stream-analytics-model\\src\\node-red\\node_modules\\node-red-dashboard\\nodes\\ui_base.js"
     },
     "ui_button": {
      "name": "ui_button",
@@ -526,7 +526,7 @@
      "enabled": true,
      "local": true,
      "module": "node-red-dashboard",
-     "file": "C:\\Users\\Dennis\\Documents\\sandbox\\stream-analytics-model\\src\\node-red\\node_modules\\node-red-dashboard\\nodes\\ui_button.js"
+     "file": "C:\\Users\\Dennis\\Documents\\StirTrek-2018\\stream-analytics-model\\src\\node-red\\node_modules\\node-red-dashboard\\nodes\\ui_button.js"
     },
     "ui_dropdown": {
      "name": "ui_dropdown",
@@ -536,7 +536,7 @@
      "enabled": true,
      "local": true,
      "module": "node-red-dashboard",
-     "file": "C:\\Users\\Dennis\\Documents\\sandbox\\stream-analytics-model\\src\\node-red\\node_modules\\node-red-dashboard\\nodes\\ui_dropdown.js"
+     "file": "C:\\Users\\Dennis\\Documents\\StirTrek-2018\\stream-analytics-model\\src\\node-red\\node_modules\\node-red-dashboard\\nodes\\ui_dropdown.js"
     },
     "ui_switch": {
      "name": "ui_switch",
@@ -546,7 +546,7 @@
      "enabled": true,
      "local": true,
      "module": "node-red-dashboard",
-     "file": "C:\\Users\\Dennis\\Documents\\sandbox\\stream-analytics-model\\src\\node-red\\node_modules\\node-red-dashboard\\nodes\\ui_switch.js"
+     "file": "C:\\Users\\Dennis\\Documents\\StirTrek-2018\\stream-analytics-model\\src\\node-red\\node_modules\\node-red-dashboard\\nodes\\ui_switch.js"
     },
     "ui_slider": {
      "name": "ui_slider",
@@ -556,7 +556,7 @@
      "enabled": true,
      "local": true,
      "module": "node-red-dashboard",
-     "file": "C:\\Users\\Dennis\\Documents\\sandbox\\stream-analytics-model\\src\\node-red\\node_modules\\node-red-dashboard\\nodes\\ui_slider.js"
+     "file": "C:\\Users\\Dennis\\Documents\\StirTrek-2018\\stream-analytics-model\\src\\node-red\\node_modules\\node-red-dashboard\\nodes\\ui_slider.js"
     },
     "ui_numeric": {
      "name": "ui_numeric",
@@ -566,7 +566,7 @@
      "enabled": true,
      "local": true,
      "module": "node-red-dashboard",
-     "file": "C:\\Users\\Dennis\\Documents\\sandbox\\stream-analytics-model\\src\\node-red\\node_modules\\node-red-dashboard\\nodes\\ui_numeric.js"
+     "file": "C:\\Users\\Dennis\\Documents\\StirTrek-2018\\stream-analytics-model\\src\\node-red\\node_modules\\node-red-dashboard\\nodes\\ui_numeric.js"
     },
     "ui_text_input": {
      "name": "ui_text_input",
@@ -576,7 +576,7 @@
      "enabled": true,
      "local": true,
      "module": "node-red-dashboard",
-     "file": "C:\\Users\\Dennis\\Documents\\sandbox\\stream-analytics-model\\src\\node-red\\node_modules\\node-red-dashboard\\nodes\\ui_text_input.js"
+     "file": "C:\\Users\\Dennis\\Documents\\StirTrek-2018\\stream-analytics-model\\src\\node-red\\node_modules\\node-red-dashboard\\nodes\\ui_text_input.js"
     },
     "ui_date_picker": {
      "name": "ui_date_picker",
@@ -586,7 +586,7 @@
      "enabled": true,
      "local": true,
      "module": "node-red-dashboard",
-     "file": "C:\\Users\\Dennis\\Documents\\sandbox\\stream-analytics-model\\src\\node-red\\node_modules\\node-red-dashboard\\nodes\\ui_date_picker.js"
+     "file": "C:\\Users\\Dennis\\Documents\\StirTrek-2018\\stream-analytics-model\\src\\node-red\\node_modules\\node-red-dashboard\\nodes\\ui_date_picker.js"
     },
     "ui_colour_picker": {
      "name": "ui_colour_picker",
@@ -596,7 +596,7 @@
      "enabled": true,
      "local": true,
      "module": "node-red-dashboard",
-     "file": "C:\\Users\\Dennis\\Documents\\sandbox\\stream-analytics-model\\src\\node-red\\node_modules\\node-red-dashboard\\nodes\\ui_colour_picker.js"
+     "file": "C:\\Users\\Dennis\\Documents\\StirTrek-2018\\stream-analytics-model\\src\\node-red\\node_modules\\node-red-dashboard\\nodes\\ui_colour_picker.js"
     },
     "ui_form": {
      "name": "ui_form",
@@ -606,7 +606,7 @@
      "enabled": true,
      "local": true,
      "module": "node-red-dashboard",
-     "file": "C:\\Users\\Dennis\\Documents\\sandbox\\stream-analytics-model\\src\\node-red\\node_modules\\node-red-dashboard\\nodes\\ui_form.js"
+     "file": "C:\\Users\\Dennis\\Documents\\StirTrek-2018\\stream-analytics-model\\src\\node-red\\node_modules\\node-red-dashboard\\nodes\\ui_form.js"
     },
     "ui_text": {
      "name": "ui_text",
@@ -616,7 +616,7 @@
      "enabled": true,
      "local": true,
      "module": "node-red-dashboard",
-     "file": "C:\\Users\\Dennis\\Documents\\sandbox\\stream-analytics-model\\src\\node-red\\node_modules\\node-red-dashboard\\nodes\\ui_text.js"
+     "file": "C:\\Users\\Dennis\\Documents\\StirTrek-2018\\stream-analytics-model\\src\\node-red\\node_modules\\node-red-dashboard\\nodes\\ui_text.js"
     },
     "ui_gauge": {
      "name": "ui_gauge",
@@ -626,7 +626,7 @@
      "enabled": true,
      "local": true,
      "module": "node-red-dashboard",
-     "file": "C:\\Users\\Dennis\\Documents\\sandbox\\stream-analytics-model\\src\\node-red\\node_modules\\node-red-dashboard\\nodes\\ui_gauge.js"
+     "file": "C:\\Users\\Dennis\\Documents\\StirTrek-2018\\stream-analytics-model\\src\\node-red\\node_modules\\node-red-dashboard\\nodes\\ui_gauge.js"
     },
     "ui_chart": {
      "name": "ui_chart",
@@ -636,7 +636,7 @@
      "enabled": true,
      "local": true,
      "module": "node-red-dashboard",
-     "file": "C:\\Users\\Dennis\\Documents\\sandbox\\stream-analytics-model\\src\\node-red\\node_modules\\node-red-dashboard\\nodes\\ui_chart.js"
+     "file": "C:\\Users\\Dennis\\Documents\\StirTrek-2018\\stream-analytics-model\\src\\node-red\\node_modules\\node-red-dashboard\\nodes\\ui_chart.js"
     },
     "ui_audio": {
      "name": "ui_audio",
@@ -646,7 +646,7 @@
      "enabled": true,
      "local": true,
      "module": "node-red-dashboard",
-     "file": "C:\\Users\\Dennis\\Documents\\sandbox\\stream-analytics-model\\src\\node-red\\node_modules\\node-red-dashboard\\nodes\\ui_audio.js"
+     "file": "C:\\Users\\Dennis\\Documents\\StirTrek-2018\\stream-analytics-model\\src\\node-red\\node_modules\\node-red-dashboard\\nodes\\ui_audio.js"
     },
     "ui_toast": {
      "name": "ui_toast",
@@ -656,7 +656,7 @@
      "enabled": true,
      "local": true,
      "module": "node-red-dashboard",
-     "file": "C:\\Users\\Dennis\\Documents\\sandbox\\stream-analytics-model\\src\\node-red\\node_modules\\node-red-dashboard\\nodes\\ui_toast.js"
+     "file": "C:\\Users\\Dennis\\Documents\\StirTrek-2018\\stream-analytics-model\\src\\node-red\\node_modules\\node-red-dashboard\\nodes\\ui_toast.js"
     },
     "ui_ui_control": {
      "name": "ui_ui_control",
@@ -666,7 +666,7 @@
      "enabled": true,
      "local": true,
      "module": "node-red-dashboard",
-     "file": "C:\\Users\\Dennis\\Documents\\sandbox\\stream-analytics-model\\src\\node-red\\node_modules\\node-red-dashboard\\nodes\\ui_ui_control.js"
+     "file": "C:\\Users\\Dennis\\Documents\\StirTrek-2018\\stream-analytics-model\\src\\node-red\\node_modules\\node-red-dashboard\\nodes\\ui_ui_control.js"
     },
     "ui_template": {
      "name": "ui_template",
@@ -676,7 +676,7 @@
      "enabled": true,
      "local": true,
      "module": "node-red-dashboard",
-     "file": "C:\\Users\\Dennis\\Documents\\sandbox\\stream-analytics-model\\src\\node-red\\node_modules\\node-red-dashboard\\nodes\\ui_template.js"
+     "file": "C:\\Users\\Dennis\\Documents\\StirTrek-2018\\stream-analytics-model\\src\\node-red\\node_modules\\node-red-dashboard\\nodes\\ui_template.js"
     },
     "ui_link": {
      "name": "ui_link",
@@ -686,7 +686,7 @@
      "enabled": true,
      "local": true,
      "module": "node-red-dashboard",
-     "file": "C:\\Users\\Dennis\\Documents\\sandbox\\stream-analytics-model\\src\\node-red\\node_modules\\node-red-dashboard\\nodes\\ui_link.js"
+     "file": "C:\\Users\\Dennis\\Documents\\StirTrek-2018\\stream-analytics-model\\src\\node-red\\node_modules\\node-red-dashboard\\nodes\\ui_link.js"
     },
     "ui_tab": {
      "name": "ui_tab",
@@ -696,7 +696,7 @@
      "enabled": true,
      "local": true,
      "module": "node-red-dashboard",
-     "file": "C:\\Users\\Dennis\\Documents\\sandbox\\stream-analytics-model\\src\\node-red\\node_modules\\node-red-dashboard\\nodes\\ui_tab.js"
+     "file": "C:\\Users\\Dennis\\Documents\\StirTrek-2018\\stream-analytics-model\\src\\node-red\\node_modules\\node-red-dashboard\\nodes\\ui_tab.js"
     },
     "ui_group": {
      "name": "ui_group",
@@ -706,7 +706,7 @@
      "enabled": true,
      "local": true,
      "module": "node-red-dashboard",
-     "file": "C:\\Users\\Dennis\\Documents\\sandbox\\stream-analytics-model\\src\\node-red\\node_modules\\node-red-dashboard\\nodes\\ui_group.js"
+     "file": "C:\\Users\\Dennis\\Documents\\StirTrek-2018\\stream-analytics-model\\src\\node-red\\node_modules\\node-red-dashboard\\nodes\\ui_group.js"
     }
    }
   },
@@ -723,7 +723,7 @@
      "enabled": true,
      "local": true,
      "module": "node-red-node-smooth",
-     "file": "C:\\Users\\Dennis\\Documents\\sandbox\\stream-analytics-model\\src\\node-red\\node_modules\\node-red-node-smooth\\17-smooth.js"
+     "file": "C:\\Users\\Dennis\\Documents\\StirTrek-2018\\stream-analytics-model\\src\\node-red\\node_modules\\node-red-node-smooth\\17-smooth.js"
     }
    }
   }

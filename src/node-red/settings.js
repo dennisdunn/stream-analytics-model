@@ -52,10 +52,10 @@ module.exports = {
     //tlsConfigDisableLocalFiles: true,
 
     // Colourise the console output of the debug node
-    //debugUseColors: true,
+    debugUseColors: true,
 
     // The file containing the flows. If not set, it defaults to flows_<hostname>.json
-    //flowFile: 'flows.json',
+    flowFile: 'flows_digital_twin.json',
 
     // To enabled pretty-printing of the flow within the flow file, set the following
     //  property to true:
@@ -75,7 +75,7 @@ module.exports = {
 
     // Node-RED scans the `nodes` directory in the install directory to find nodes.
     // The following property can be used to specify an additional directory to scan.
-    nodesDir: 'c:/users/dennis/Documents/StirTrek-2018/stream-analytics-model/src/nodes',
+    nodesDir: 'c:/users/dennis/Documents/sandbox/stream-analytics-model/src/nodes',
 
     // By default, the Node-RED UI is available at http://localhost:1880/
     // The following property can be used to specifiy a different root path.
@@ -96,7 +96,7 @@ module.exports = {
     // following property can be used to identify a directory of static content
     // that should be served at http://localhost:1880/.
     //httpStatic: '/home/nol/node-red-static/',
-    httpStatic: 'c:/users/dennis/Documents/StirTrek-2018/stream-analytics-model/',
+    httpStatic: 'c:/users/dennis/Documents/sandbox/stream-analytics-model/',
 
     // The maximum size of HTTP request that will be accepted by the runtime api.
     // Default: 5mb
@@ -191,8 +191,8 @@ module.exports = {
     //    //   - reason: if result is false, the HTTP reason string to return
     //},
 
-    // Anything in this hash is globally 
-    // available to all functions. It 
+    // Anything in this hash is globally
+    // available to all functions. It
     // can be accessed in a function block as:
     //    context.global.os
 
