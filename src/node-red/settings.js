@@ -55,7 +55,7 @@ module.exports = {
     debugUseColors: true,
 
     // The file containing the flows. If not set, it defaults to flows_<hostname>.json
-    flowFile: 'flows_digital_twin.json',
+    flowFile: 'flows.json',
 
     // To enabled pretty-printing of the flow within the flow file, set the following
     //  property to true:
@@ -75,7 +75,7 @@ module.exports = {
 
     // Node-RED scans the `nodes` directory in the install directory to find nodes.
     // The following property can be used to specify an additional directory to scan.
-    nodesDir: 'c:/users/dennis/Documents/sandbox/stream-analytics-model/src/nodes',
+    nodesDir: '/data/nodes',
 
     // By default, the Node-RED UI is available at http://localhost:1880/
     // The following property can be used to specifiy a different root path.
@@ -86,7 +86,7 @@ module.exports = {
     // By default, these are served relative to '/'. The following property
     // can be used to specifiy a different root path. If set to false, this is
     // disabled.
-    // httpNodeRoot: '/api',
+    httpNodeRoot: '/api',
 
     // The following property can be used in place of 'httpAdminRoot' and 'httpNodeRoot',
     // to apply the same root to both parts.
@@ -96,7 +96,7 @@ module.exports = {
     // following property can be used to identify a directory of static content
     // that should be served at http://localhost:1880/.
     //httpStatic: '/home/nol/node-red-static/',
-    httpStatic: 'c:/users/dennis/Documents/sandbox/stream-analytics-model/',
+    httpStatic: '/data/static',
 
     // The maximum size of HTTP request that will be accepted by the runtime api.
     // Default: 5mb
@@ -197,7 +197,7 @@ module.exports = {
     //    context.global.os
 
     functionGlobalContext: {
-        catalogDir: 'catalogs',
+        catalogDir: 'timeseries',
         path: require('path'),
         moment: require('moment'),
         regression: require('regression')
