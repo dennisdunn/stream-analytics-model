@@ -241,6 +241,7 @@
             "#c5b0d5"
         ],
         "useOldStyle": false,
+        "outputs": 2,
         "x": 590,
         "y": 200,
         "wires": [
@@ -343,6 +344,7 @@
             "#c5b0d5"
         ],
         "useOldStyle": false,
+        "outputs": 2,
         "x": 600,
         "y": 300,
         "wires": [
@@ -455,7 +457,7 @@
         "stream": false,
         "addname": "",
         "x": 370,
-        "y": 320,
+        "y": 300,
         "wires": [
             [
                 "6aa36239.4ba67c"
@@ -467,10 +469,10 @@
         "type": "function",
         "z": "f87f73ed.ba341",
         "name": "set image path",
-        "func": "if(msg.payload === \"\") return null;\n\nvar catalog = flow.get('catalog');\nmsg.payload =  '../' + catalog + '/pic/' + msg.payload;\nreturn msg;",
+        "func": "if(msg.payload === \"\") return null;\n\nvar catalog = flow.get('catalog');\nmsg.payload =  '/' + catalog + '/pic/' + msg.payload;\nreturn msg;",
         "outputs": 1,
         "noerr": 0,
-        "x": 560,
+        "x": 540,
         "y": 320,
         "wires": [
             [
@@ -601,7 +603,7 @@
         "type": "function",
         "z": "f87f73ed.ba341",
         "name": "set catalog",
-        "func": "var catalog = context.global.catalogDir + '/' + msg.payload;\nflow.set('catalog',catalog);\n\nmsg.payload = catalog + '/pic';\nreturn msg;",
+        "func": "var catalog =global.get('catalogDir') + '/' + msg.payload;\nflow.set('catalog',catalog);\n\nmsg.payload = '/data/static/' + catalog + '/pic';\nreturn msg;",
         "outputs": 1,
         "noerr": 0,
         "x": 590,
@@ -713,7 +715,7 @@
         "type": "function",
         "z": "f87f73ed.ba341",
         "name": "set filename",
-        "func": "var catalog = flow.get('catalog');\nvar path = context.global.path;\nvar info = path.parse(msg.payload);\nmsg.filename = catalog + '/dat/' + info.name + '.csv';\nreturn msg;\n",
+        "func": "var catalog = flow.get('catalog');\nvar path = context.global.path;\nvar info = path.parse(msg.payload);\nmsg.filename = '/data/static/' + catalog + '/dat/' + info.name + '.csv';\nreturn msg;\n",
         "outputs": 1,
         "noerr": 0,
         "x": 570,

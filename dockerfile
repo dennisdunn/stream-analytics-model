@@ -6,7 +6,7 @@ COPY ./package.json .
 COPY ./src/node-red .
 COPY ./src/nodes ./nodes
 COPY ./src/static ./static
-COPY ./data ./timeseries
+COPY ./data ./static/timeseries
 
 WORKDIR /usr/src/node-red
 
